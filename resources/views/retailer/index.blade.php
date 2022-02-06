@@ -4,7 +4,7 @@
 <h1>Selamat Datang {{ auth()->user()->name }}</h1>
 <h2>Silahkan melengkapi data diri anda</h2>
 
-<a href="/retailer/create">Lengkapi Data Diri</a>
+<a href="/retailer/create" class="btn btn-primary mb-3">Lengkapi Data Diri</a>
 
 <form action="/logout" method="post">
     @csrf
