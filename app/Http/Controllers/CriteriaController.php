@@ -1,0 +1,73 @@
+<?php
+
+namespace App\Http\Controllers;
+
+
+use App\Models\Criteria;
+use App\Models\Factor;
+use Illuminate\Http\Request;
+
+class CriteriaController extends Controller
+{
+    public function index()
+    {
+
+        return view('dashboard.criterias.index', [
+            'criterias' => Criteria::with(['profiles'])->get()
+        ]);
+    }
+
+    public function create()
+    {
+        return view('dashboard.criterias.create', [
+            'factors' => Factor::all()
+        ]);
+    }
+    public function store(Request $request)
+    {
+        Criteria::create([
+            'name' => $request->name,
+            'factor_id' => $request->factor_id,
+        ]);
+        return redirect('dashboard/criterias');
+    }
+
+    public function show($id)
+    {
+        $criteria = Criteria::find($id);
+        return view(
+            'dashboard.criterias.criteria',
+            [
+                'profiles' => $criteria->profiles,
+                'criteria' => $criteria->name,
+                'factors' => $criteria->factor
+
+            ]
+        );
+    }
+
+
+    public function edit($id)
+    {
+        $criteria = Criteria::find($id);
+        return view('dashboard.criterias.edit', [
+            'criteria' => $criteria,
+            'factors' => Factor::all()
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        Criteria::find($id)->update([
+            'name' => $request->name,
+            'factor_id' => $request->factor_id,
+        ]);
+        return redirect('dashboard/criterias');
+    }
+
+    public function destroy($id)
+    {
+        Criteria::find($id)->delete();
+        return back();
+    }
+}
