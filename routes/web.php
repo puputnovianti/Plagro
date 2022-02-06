@@ -63,4 +63,3 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::resource('/dashboard', AdminController::class);
 
 Route::resource('/retailer', RetailerController::class)->middleware('retailer');
-Route::get('retailer/create', [RetailerController::class, 'create'])->middleware('retailer');
