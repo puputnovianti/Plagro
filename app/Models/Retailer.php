@@ -11,4 +11,9 @@ class Retailer extends Authenticatable
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

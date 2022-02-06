@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Retailer;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RetailerController extends Controller
@@ -13,7 +15,9 @@ class RetailerController extends Controller
      */
     public function index()
     {
-        return view('retailer.index');
+        return view(
+            'retailer.index'
+        );
     }
 
     /**
@@ -23,7 +27,7 @@ class RetailerController extends Controller
      */
     public function create()
     {
-        //
+        return view('retailer.create');
     }
 
     /**
@@ -45,7 +49,13 @@ class RetailerController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        return view(
+            'retailer.index',
+            [
+                'name' => $user->name,
+            ]
+        );
     }
 
     /**

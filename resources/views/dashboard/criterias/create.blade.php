@@ -20,5 +20,5 @@
       <button type="submit" class="btn btn-primary mt-3">Tambah</button>
     </form>
   </div>
-  </div>
+</main>
   @endsection
