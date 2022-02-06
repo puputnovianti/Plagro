@@ -38,7 +38,13 @@ class RetailerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Retailer::create([
+            'user_id' => $request->user_id,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'location' => $request->location
+        ]);
+        return redirect('/retailer');
     }
 
     /**

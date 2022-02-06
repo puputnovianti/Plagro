@@ -7,9 +7,10 @@
   <div class="col-lg-8">
     <form method="POST" action="/retailer">
       @csrf
+      <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
       <div class="mb-3 mt-5">
         <label for="address" class="form-label">Alamat Lengkap</label>
-        <input name="name" type="text" class="form-control">
+        <input name="address" type="text" class="form-control">
       </div>
       <div class="mb-3 mt-5">
         <label for="phone" class="form-label">Nomor Telepon</label>
