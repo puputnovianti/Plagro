@@ -24,5 +24,4 @@
       <button type="submit" class="btn btn-primary mt-3">Simpan</button>
     </form>
   </div>
-  </div>
   @endsection

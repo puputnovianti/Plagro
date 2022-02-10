@@ -36,6 +36,11 @@ Route::get('dashboard/criterias', [CriteriaController::class, 'index'])->middlew
 Route::get('dashboard/criterias/create', [CriteriaController::class, 'create'])->middleware('admin');
 Route::post('dashboard/criterias', [CriteriaController::class, 'store']);
 Route::get('dashboard/criterias/{criteria:id}', [CriteriaController::class, 'show'])->middleware('admin');
+
+
+Route::post('dashboard/criterias/criteria', [CriteriaController::class, 'storeprofile']);
+
+
 Route::get('dashboard/criterias/{id}/edit', [CriteriaController::class, 'edit'])->middleware('admin');
 Route::put('dashboard/criterias/{id}', [CriteriaController::class, 'update'])->middleware('admin');
 Route::delete('dashboard/criterias/{id}', [CriteriaController::class, 'destroy'])->middleware('admin');

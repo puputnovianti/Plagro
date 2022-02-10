@@ -8,16 +8,10 @@
     <form action="/dashboard/profiles/{{ $profile->id }}" method="post">
     @method('put')
       @csrf
-      <label for="criteria_id" class="form-label">Kriteria</label>
-      <select class="form-select" name="criteria_id">
-        @foreach($criterias as $criteria)
-        @if(old('criteria_id', $profile->criteria_id) == $criteria->id)
-        <option value="{{ $criteria->id }}" selected>{{$criteria->name}}</option>
-        @else
-        <option value="{{ $criteria->id }}">{{$criteria->name}}</option>
-        @endif
-        @endforeach
-      </select>
+      <div class="mb-3 mt-5">
+        {{-- <label for="criteria_id" class="form-label">Kriteria</label> --}}
+        <input name="criteria_id" type="hidden" value="{{ $profile->criteria->id }}" class="form-control">
+      </div>
       <div class="mb-3 mt-5">
         <label for="name" class="form-label">Nama Profil</label>
         <input name="name" type="text" value="{{ $profile->name }}" class="form-control">

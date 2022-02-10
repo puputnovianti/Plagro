@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Profiles</h1>
     </div>
-    <a class="btn btn-primary mb-3" href="/dashboard/profiles/create">Tambah Profil</a>
+    {{-- <a class="btn btn-primary mb-3" href="/dashboard/profiles/create">Tambah Profil</a> --}}
     <div class="table-responsive">
         <table class="table table-striped table-sm">
             <thead>

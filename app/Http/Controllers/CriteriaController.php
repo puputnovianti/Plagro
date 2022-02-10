@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Criteria;
 use App\Models\Factor;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 
 class CriteriaController extends Controller
@@ -32,6 +33,7 @@ class CriteriaController extends Controller
         return redirect('dashboard/criterias');
     }
 
+
     public function show($id)
     {
         $criteria = Criteria::find($id);
@@ -39,12 +41,26 @@ class CriteriaController extends Controller
             'dashboard.criterias.criteria',
             [
                 'profiles' => $criteria->profiles,
-                'criteria' => $criteria->name,
-                'factors' => $criteria->factor
+                'criteria_id' => $criteria->id,
+                'criteria_name' => $criteria->name,
+                'factors' => $criteria->factor,
+
 
             ]
         );
     }
+
+
+    public function storeprofile(Request $request)
+    {
+        Profile::create([
+            'criteria_id' => $request->criteria_id,
+            'name' => $request->name,
+            'score' => $request->score,
+        ]);
+        return redirect()->back();
+    }
+
 
 
     public function edit($id)
