@@ -10,25 +10,25 @@
       <li class="nav-item">
         <a class="nav-link {{ Request::is('dashboard/criterias*') ? 'active' : '' }}" href="/dashboard/criterias">
           <span data-feather="list"></span>
-          Criterias
+          Kriterira
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('dashboard/profiles*') ? 'active' : '' }}" href="/dashboard/profiles">
+        <a class="nav-link {{ Request::is('dashboard/profiles*') ? 'active' : '' }}" href="#">
           <span data-feather="folder"></span>
-          Profiles
+          Profil Ideal
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">
           <span data-feather="users"></span>
-          Retailers
+          Calon Retailer
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">
           <span data-feather="bar-chart-2"></span>
-          Reports
+          Hasil Perhitungan
         </a>
       </li>
       <li class="nav-item">
