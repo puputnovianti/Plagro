@@ -10,7 +10,7 @@
       <li class="nav-item">
         <a class="nav-link {{ Request::is('dashboard/criterias*') ? 'active' : '' }}" href="/dashboard/criterias">
           <span data-feather="list"></span>
-          Kriterira
+          Kriteria
         </a>
       </li>
       <li class="nav-item">
