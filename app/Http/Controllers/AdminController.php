@@ -11,9 +11,4 @@ class AdminController extends Controller
         $this->authorize('admin');
         return view('/dashboard.index');
     }
-
-    public function show()
-    {
-        return view('dashboard.ideal_profile.index');
-    }
 }

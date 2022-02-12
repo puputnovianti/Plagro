@@ -15,4 +15,9 @@ class Profile extends Model
     {
         return $this->belongsTo(Criteria::class);
     }
+
+    public function idealProfile()
+    {
+        return $this->hasMany(IdealProfile::class);
+    }
 }

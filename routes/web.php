@@ -57,7 +57,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::resource('/dashboard', AdminController::class);
+Route::get('/dashboard', [AdminController::class, 'index'])->middleware('admin');
 
 Route::resource('/retailer', RetailerController::class)->middleware('retailer');
 

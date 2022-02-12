@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class IdealProfile extends Model
 {
     use HasFactory;
+
+    public function profile()
+    {
+        return $this->belongsTo(Profile::class);
+    }
 }
