@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Criteria;
 use App\Models\Factor;
+use App\Models\IdealProfile;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 
@@ -26,10 +27,16 @@ class CriteriaController extends Controller
     }
     public function store(Request $request)
     {
-        Criteria::create([
+        $criteria = Criteria::create([
             'name' => $request->name,
             'factor_id' => $request->factor_id,
         ]);
+
+        IdealProfile::create([
+            'criteria_id' => $criteria->id,
+        ]);
+
+
         return redirect('dashboard/criterias');
     }
 

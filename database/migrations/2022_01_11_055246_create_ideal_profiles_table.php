@@ -15,7 +15,8 @@ class CreateIdealProfilesTable extends Migration
     {
         Schema::create('ideal_profiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('profile_id');
+            $table->foreignId('criteria_id');
+            $table->foreignId('profile_id')->nullable();
             $table->timestamps();
         });
     }

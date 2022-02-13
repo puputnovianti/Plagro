@@ -19,4 +19,9 @@ class Criteria extends Model
     {
         return $this->belongsTo(Factor::class);
     }
+
+    public function idealProfile()
+    {
+        return $this->hasOne(IdealProfile::class);
+    }
 }
