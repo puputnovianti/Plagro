@@ -14,9 +14,11 @@ class CreateIdealProfilesTable extends Migration
     public function up()
     {
         Schema::create('ideal_profiles', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('criteria_id');
-            $table->foreignId('profile_id')->nullable();
+            $table->increments('id');
+            $table->integer('criteria_id')->unsigned()->nullable();
+            $table->foreign('criteria_id')->references('id')->on('criterias')->onDelete('cascade');
+            $table->integer('profile_id')->unsigned()->nullable();
+            $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
             $table->timestamps();
         });
     }

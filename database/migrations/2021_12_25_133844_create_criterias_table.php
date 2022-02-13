@@ -14,7 +14,7 @@ class CreateCriteriasTable extends Migration
     public function up()
     {
         Schema::create('criterias', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->foreignId('factor_id');
             $table->string('name');
             $table->timestamps();

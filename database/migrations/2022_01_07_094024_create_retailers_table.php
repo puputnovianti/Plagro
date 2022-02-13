@@ -14,8 +14,9 @@ class CreateRetailersTable extends Migration
     public function up()
     {
         Schema::create('retailers', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id');
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('address');
             $table->string('phone');
             $table->string('location');

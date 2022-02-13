@@ -14,11 +14,10 @@ class CreateCalculationsTable extends Migration
     public function up()
     {
         Schema::create('calculations', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->integer('cfactor');
             $table->integer('sfactor');
             $table->integer('total_score');
-            $table->foreignId('location_id');
             $table->timestamps();
         });
     }

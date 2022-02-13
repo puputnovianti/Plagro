@@ -14,9 +14,9 @@ class CreateRetailerProfilesTable extends Migration
     public function up()
     {
         Schema::create('retailer_profiles', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('profile_id');
-            $table->foreignId('location_id');
+            $table->increments('id');
+            $table->integer('profile_id')->unsigned();
+            $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
             $table->timestamps();
         });
     }

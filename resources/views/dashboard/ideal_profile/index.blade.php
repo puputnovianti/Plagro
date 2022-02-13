@@ -10,7 +10,6 @@
           <thead>
             <tr>
               <th scope="col">No</th>
-              <th scope="col">Faktor</th>
               <th scope="col">Kriteria</th>
               <th scope="col">Nama Profil</th>
               <th scope="col">Nilai</th>
@@ -21,7 +20,6 @@
             @foreach($ideal_profiles as $ideal_profile)
             <tr>
                 <td>{{ $loop->iteration}}</td>
-                <td>{{ $ideal_profile->profile->criteria->factor->name }}</td>
                 <td>{{ $ideal_profile->profile->criteria->name}}</td>
                 <td>{{ $ideal_profile->profile->name }}</td>
                 <td>{{ $ideal_profile->profile->score }}</td>
