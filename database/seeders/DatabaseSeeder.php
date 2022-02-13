@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Criteria;
 use App\Models\Factor;
+use App\Models\IdealProfile;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -94,6 +95,21 @@ class DatabaseSeeder extends Seeder
             'email' => 'puputnovianti99@gmail.com',
             'password' => Hash::make('password'),
             'is_admin' => 0
+        ]);
+
+        IdealProfile::create([
+            'criteria_id' => 1,
+            'profile_id' => 1,
+        ]);
+
+        IdealProfile::create([
+            'criteria_id' => 2,
+            'profile_id' => 5,
+        ]);
+
+        IdealProfile::create([
+            'criteria_id' => 3,
+            'profile_id' => 7,
         ]);
     }
 }
