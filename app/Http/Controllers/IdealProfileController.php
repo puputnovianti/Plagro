@@ -17,4 +17,13 @@ class IdealProfileController extends Controller
             'criteria' => Criteria::orderBy('id')->get(),
         ]);
     }
+
+    public function storeidealprofile(Request $request)
+    {
+        $ideal = IdealProfile::create([
+            'criteria_id' => $request->criteria_id,
+            'profile_id' => $request->ideal_profile,
+        ]);
+        dd($ideal);
+    }
 }

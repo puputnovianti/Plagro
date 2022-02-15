@@ -9,7 +9,6 @@
     @method('put')
       @csrf
       <div class="mb-3 mt-5">
-        {{-- <label for="criteria_id" class="form-label">Kriteria</label> --}}
         <input name="criteria_id" type="hidden" value="{{ $profile->criteria->id }}" class="form-control">
       </div>
       <div class="mb-3 mt-5">

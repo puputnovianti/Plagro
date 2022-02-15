@@ -9,7 +9,7 @@ use App\Http\Controllers\IdealProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RetailerController;
-
+use App\Models\IdealProfile;
 use Illuminate\Support\Facades\Route;
 
 
@@ -31,6 +31,7 @@ Route::get('dashboard/criterias/{criteria:id}', [CriteriaController::class, 'sho
 
 
 Route::post('dashboard/criterias/criteria', [CriteriaController::class, 'storeprofile']);
+// Route::post('dashboard/criterias/criteria', [IdealProfile::class, 'storeidealprofile']);
 
 
 Route::get('dashboard/criterias/{id}/edit', [CriteriaController::class, 'edit'])->middleware('admin');

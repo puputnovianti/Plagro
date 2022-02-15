@@ -41,6 +41,8 @@ class CriteriaController extends Controller
     }
 
 
+
+
     public function show($id)
     {
         $criteria = Criteria::find($id);
@@ -65,8 +67,11 @@ class CriteriaController extends Controller
             'name' => $request->name,
             'score' => $request->score,
         ]);
+
         return redirect()->back();
     }
+
+
 
 
 
