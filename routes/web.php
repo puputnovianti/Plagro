@@ -10,6 +10,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RetailerController;
 use App\Models\IdealProfile;
+use App\Models\RetailerProfile;
 use Illuminate\Support\Facades\Route;
 
 
@@ -61,6 +62,11 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/dashboard', [AdminController::class, 'index'])->middleware('admin');
 
 Route::resource('/retailer', RetailerController::class)->middleware('retailer');
+
+
+
+Route::get('/retailer/retailer_profile', [RetailerProfile::class, 'index']);
+Route::get('/retailer/retailer_profile/create', [RetailerProfile::class, 'create']);
 
 
 Route::get('dashboard/ideal_profile', [IdealProfileController::class, 'index']);

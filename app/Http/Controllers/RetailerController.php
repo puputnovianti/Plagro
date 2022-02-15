@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Criteria;
+use App\Models\Factor;
+use App\Models\Profile;
 use App\Models\Retailer;
+use App\Models\RetailerProfile;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -27,7 +31,10 @@ class RetailerController extends Controller
      */
     public function create()
     {
-        return view('retailer.create');
+        return view('retailer.create', [
+            'criterias' => Criteria::with(['profiles'])->get(),
+            'profiles' => Profile::all(),
+        ]);
     }
 
     /**
@@ -44,7 +51,10 @@ class RetailerController extends Controller
             'phone' => $request->phone,
             'location' => $request->location
         ]);
-        return redirect('/retailer');
+        // RetailerProfile::create([
+        //     'profile_id' => $request->retailer_profile,
+        // ]);
+        return redirect('retailer/index');
     }
 
     /**
@@ -53,6 +63,8 @@ class RetailerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
     public function show($id)
     {
         $user = User::find($id);
