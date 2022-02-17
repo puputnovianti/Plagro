@@ -7,8 +7,10 @@ use App\Models\Factor;
 use App\Models\Profile;
 use App\Models\Retailer;
 use App\Models\RetailerProfile;
+use App\Models\RetailerProfileDitail;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RetailerController extends Controller
 {
@@ -45,16 +47,30 @@ class RetailerController extends Controller
      */
     public function store(Request $request)
     {
-        Retailer::create([
+        $retailer = Retailer::create([
             'user_id' => $request->user_id,
             'address' => $request->address,
             'phone' => $request->phone,
             'location' => $request->location
         ]);
-        // RetailerProfile::create([
-        //     'profile_id' => $request->retailer_profile,
-        // ]);
-        return redirect('retailer/index');
+
+        foreach ($retailer->id as $key) {
+            $dataSave = [
+                'retailer_id' => $retailer->id[$key],
+                'profile_id' => $request->profile_id[$key],
+            ];
+            DB::table('retailer_profiles')->insert($dataSave);
+
+            // foreach ($request->profile_id as $key) {
+            //     $dataSave = [
+            //         'profile_id' => $request->profile_id[$key],
+            //         'user_id' => $request->user_id[$key],
+            //     ];
+            //     DB::table('retailer_profile_ditails')->insert($dataSave);
+        }
+
+
+        return dd($dataSave);
     }
 
     /**

@@ -29,12 +29,14 @@
 
       @foreach($criterias as $criteria)
       <div class="mb-3 mt-3">
-      <label for="retailer_profile" class="form-label">{{$criteria->name}}</label>
-      <select class="form-select" name="retailer_profile" aria-label="Default select example">
+      {{-- <input type="hidden" name="user_id[]" value="{{ auth()->user()->id }}"> --}}
+      <label class="form-label">{{$criteria->name}}
+      <select class="form-select" name="profile_id[]" aria-label="Default select example">
         @foreach($criteria->profiles as $profile)
         <option value="{{ $profile->id }}">{{ $profile->name }}</option>
         @endforeach
       </select>
+    </label>
       </div>
       @endforeach
 

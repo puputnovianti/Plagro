@@ -20,4 +20,9 @@ class Profile extends Model
     {
         return $this->hasMany(IdealProfile::class);
     }
+
+    public function retailerProfile()
+    {
+        return $this->hasOne(RetailerProfile::class);
+    }
 }

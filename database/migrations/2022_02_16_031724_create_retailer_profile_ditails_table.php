@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRetailerProfilesTable extends Migration
+class CreateRetailerProfileDitailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateRetailerProfilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('retailer_profiles', function (Blueprint $table) {
+        Schema::create('retailer_profile_ditails', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('retailer_id')->unsigned();
-            $table->foreign('retailer_id')->references('id')->on('retailers')->onDelete('cascade');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('profile_id')->unsigned();
             $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
             $table->timestamps();
@@ -30,6 +30,6 @@ class CreateRetailerProfilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('retailer_profiles');
+        Schema::dropIfExists('retailer_profile_ditails');
     }
 }

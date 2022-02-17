@@ -9,4 +9,18 @@ class RetailerProfile extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    // public function retailerProfileDetail()
+    // {
+    //     return $this->hasMany(RetailerProfileDitail::class);
+    // }
+
+    public function retailer()
+    {
+        return $this->belongsTo(Retailer::class);
+    }
+
+    public function profile()
+    {
+        return $this->belongsTo(Profile::class);
+    }
 }
