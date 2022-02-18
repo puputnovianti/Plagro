@@ -10,6 +10,7 @@ use App\Models\RetailerProfile;
 use App\Models\RetailerProfileDitail;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
 class RetailerController extends Controller
@@ -47,30 +48,25 @@ class RetailerController extends Controller
      */
     public function store(Request $request)
     {
-        $retailer = Retailer::create([
-            'user_id' => $request->user_id,
-            'address' => $request->address,
-            'phone' => $request->phone,
-            'location' => $request->location
-        ]);
+        $data = $request->all();
+        $retailer = new Retailer;
+        $retailer->user_id = $data['user_id'];
+        $retailer->address = $data['address'];
+        $retailer->phone = $data['phone'];
+        $retailer->location = $data['location'];
+        $retailer->save();
 
-        foreach ($retailer->id as $key) {
-            $dataSave = [
-                'retailer_id' => $retailer->id[$key],
-                'profile_id' => $request->profile_id[$key],
-            ];
-            DB::table('retailer_profiles')->insert($dataSave);
+        if (is_countable($data['profile_id']) && count($data['profile_id']) > 0) {
+            foreach ($data['profile_id'] as $item => $value) {
+                $data2 = array(
+                    'retailer_id' => $retailer->id,
+                    'profile_id' => $data['profile_id'][$item],
 
-            // foreach ($request->profile_id as $key) {
-            //     $dataSave = [
-            //         'profile_id' => $request->profile_id[$key],
-            //         'user_id' => $request->user_id[$key],
-            //     ];
-            //     DB::table('retailer_profile_ditails')->insert($dataSave);
+                );
+                RetailerProfile::create($data2);
+            }
         }
-
-
-        return dd($dataSave);
+        return redirect('retailer');
     }
 
     /**
