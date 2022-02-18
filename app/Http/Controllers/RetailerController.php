@@ -7,7 +7,6 @@ use App\Models\Factor;
 use App\Models\Profile;
 use App\Models\Retailer;
 use App\Models\RetailerProfile;
-use App\Models\RetailerProfileDitail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
