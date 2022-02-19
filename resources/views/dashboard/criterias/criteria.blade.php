@@ -64,8 +64,8 @@
       <div class="col-lg-8">
         <form action="/dashboard/criterias/criteria" method="post">
           @csrf
+          <a class="addprofile btn btn-info mb-3" href="#">Tambah Profil</a>
           <div class="mb-3 mt-3">
-            {{-- <label for="criteria_id" class="form-label">Kriteria</label> --}}
             <input name="criteria_id" type="hidden" class="form-control" value="{{ $criteria_id }}">
           </div>
           <div class="mb-3 mt-3">
@@ -76,8 +76,12 @@
             <label for="score" class="form-label">Nilai</label>
             <input name="score" type="text" class="form-control" required>
           </div>
+          <div class="profile"></div>
           <button type="submit" class="btn btn-primary mt-3">Simpan</button>
         </form>
       </div>
+
+      
 </main>
 @endsection
+
