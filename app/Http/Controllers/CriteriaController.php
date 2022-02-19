@@ -8,6 +8,7 @@ use App\Models\Factor;
 use App\Models\IdealProfile;
 use App\Models\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CriteriaController extends Controller
 {
@@ -27,20 +28,13 @@ class CriteriaController extends Controller
     }
     public function store(Request $request)
     {
-        $criteria = Criteria::create([
+        Criteria::create([
             'name' => $request->name,
             'factor_id' => $request->factor_id,
         ]);
 
-        IdealProfile::create([
-            'criteria_id' => $criteria->id,
-        ]);
-
-
         return redirect('dashboard/criterias');
     }
-
-
 
 
     public function show($id)

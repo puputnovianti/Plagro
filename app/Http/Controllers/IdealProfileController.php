@@ -18,12 +18,31 @@ class IdealProfileController extends Controller
         ]);
     }
 
-    public function storeidealprofile(Request $request)
+    // public function storeidealprofile(Request $request)
+    // {
+    //     $ideal = IdealProfile::create([
+    //         'criteria_id' => $request->criteria_id,
+    //         'profile_id' => $request->ideal_profile,
+    //     ]);
+    //     dd($ideal);
+    // }
+
+    public function show($id)
     {
-        $ideal = IdealProfile::create([
-            'criteria_id' => $request->criteria_id,
-            'profile_id' => $request->ideal_profile,
+        $criteria = Criteria::find($id);
+        return view('dashboard.ideal_profile.create', [
+            'profiles' => $criteria->profiles,
+            'criteria_id' => $criteria->id,
+            'criteria_name' => $criteria->name,
         ]);
-        dd($ideal);
+    }
+
+    public function store(Request $request)
+    {
+        IdealProfile::create([
+            'criteria_id' => $request->criteria_id,
+            'profile_id' => $request->profile_id
+        ]);
+        return redirect('dashboard/ideal_profile');
     }
 }

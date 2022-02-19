@@ -32,7 +32,10 @@ Route::get('dashboard/criterias/{criteria:id}', [CriteriaController::class, 'sho
 
 
 Route::post('dashboard/criterias/criteria', [CriteriaController::class, 'storeprofile']);
-Route::post('dashboard/criterias/criteria', [CriteriaController::class, 'storeidealprofile']);
+// Route::post('dashboard/criterias/criteria', [CriteriaController::class, 'storeidealprofile']);
+
+Route::get('dashboard/ideal_profile/{criteria:id}', [IdealProfileController::class, 'show'])->middleware('admin');
+Route::post('dashboard/ideal_profile/{id}', [IdealProfileController::class, 'store'])->middleware('admin');
 
 
 Route::get('dashboard/criterias/{id}/edit', [CriteriaController::class, 'edit'])->middleware('admin');

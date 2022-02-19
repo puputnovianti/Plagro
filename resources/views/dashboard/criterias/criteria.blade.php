@@ -7,7 +7,7 @@
     <h6>{{ $factors->name }}</h6>
   
 <a class="btn btn-info mb-3" href="/dashboard/criterias">Kembali</a>
-
+<a class="btn btn-warning mb-3" href="/dashboard/ideal_profile/{{ $criteria_id }}">Atur Profil Ideal</a>
 
     <div class="table-responsive">
         <table class="table table-striped table-sm">
@@ -32,39 +32,16 @@
                    @csrf
                 <button type="submit" class="badge bg-danger border-0"><span data-feather="x-circle"></span></button>
                 </form>
-                  <div class="form-check">
-                    <input class="form-check-input" value="{{ $profile->id }}" type="radio" name="ideal_profile" id="ideal_profile" checked>
-                    <label class="form-check-label" for="ideal_profile">
-                      Profil Ideal
-                    </label>
-              </form>
               </td>
             </tr>
             @endforeach
           </tbody>
         </table>
       </div>
-
-      {{-- <div class="col-lg-8">
-        <div class="mb-2">
-        <form action="/dashboard/criterias/criteria" method="post">
-          @csrf
-          <input name="criteria_id" type="hidden" class="form-control" value="{{ $criteria_id }}">
-          <label for="ideal_profile">Profil Ideal</label>
-          <select class="form-select" name="ideal_profile" aria-label="Default select example">
-            @foreach($profiles as $profile)
-            <option value="{{ $profile->id }}">{{ $profile->name }}</option>
-            @endforeach
-          </select>
-          <a class="btn btn-primary mb-3 mt-3" href="/dashboard/criterias/criteria">Simpan</a>
-        </form>
-      </div>
-      </div> --}}
       
       <div class="col-lg-8">
         <form action="/dashboard/criterias/criteria" method="post">
           @csrf
-          <a class="addprofile btn btn-info mb-3" href="#">Tambah Profil</a>
           <div class="mb-3 mt-3">
             <input name="criteria_id" type="hidden" class="form-control" value="{{ $criteria_id }}">
           </div>

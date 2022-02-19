@@ -18,7 +18,7 @@ class Profile extends Model
 
     public function idealProfile()
     {
-        return $this->hasMany(IdealProfile::class);
+        return $this->hasOne(IdealProfile::class);
     }
 
     public function retailerProfile()
