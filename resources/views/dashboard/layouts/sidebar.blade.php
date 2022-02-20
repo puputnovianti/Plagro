@@ -37,11 +37,6 @@
           Hasil Perhitungan
         </a>
       </li>
-      <li class="nav-item">
-        <form action="" method="">
-          <a class="nav-link" type="submit"><span data-feather="log-out"></span>Logout</a>
-        </form>
-      </li>
     </ul>
   </div>
 </nav>

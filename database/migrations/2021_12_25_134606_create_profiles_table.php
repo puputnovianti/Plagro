@@ -16,7 +16,7 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('criteria_id')->unsigned();
-            $table->foreign('criteria_id')->references('id')->on('criterias')->onDelete('cascade');
+            $table->foreign('criteria_id')->references('id')->on('criterias')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('name');
             $table->integer('score');
         });
