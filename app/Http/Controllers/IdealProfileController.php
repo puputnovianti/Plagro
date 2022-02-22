@@ -45,4 +45,22 @@ class IdealProfileController extends Controller
         ]);
         return redirect('dashboard/ideal_profile');
     }
+
+    public function edit($id)
+    {
+        $criteria = Criteria::find($id);
+        return view('dashboard.ideal_profile.edit', [
+            'criteria' => $criteria,
+            'profiles' => Profile::all()
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        IdealProfile::find($id)->update([
+            'criteria_id' => $request->criteria_id,
+            'profile_id' => $request->profile_id
+        ]);
+        return redirect('dashboard/ideal_profile');
+    }
 }

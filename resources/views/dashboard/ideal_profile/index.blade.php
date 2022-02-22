@@ -23,7 +23,7 @@
                 <td>{{ $ideal_profile->profile->criteria->name}}</td>
                 <td>{{ $ideal_profile->profile->name }}</td>
                 <td>{{ $ideal_profile->profile->score }}</td>
-                <td><a class="badge bg-warning" href="/dashboard/ideal_profile/edit"><span data-feather="edit"></span></a></td>
+                <td><a class="badge bg-warning" href="/dashboard/ideal_profile/{{$ideal_profile->profile->criteria->id}}/edit"><span data-feather="edit"></span></a></td>
             </tr>
             @endforeach
           </tbody>

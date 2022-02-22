@@ -36,6 +36,8 @@ Route::post('dashboard/criterias/criteria', [CriteriaController::class, 'storepr
 
 Route::get('dashboard/ideal_profile/{criteria:id}', [IdealProfileController::class, 'show'])->middleware('admin');
 Route::post('dashboard/ideal_profile/{id}', [IdealProfileController::class, 'store'])->middleware('admin');
+Route::get('dashboard/ideal_profile/{id}/edit', [IdealProfileController::class, 'edit'])->middleware('admin');
+Route::put('dashboard/ideal_profile/{id}', [IdealProfileController::class, 'update'])->middleware('admin');
 
 
 Route::get('dashboard/criterias/{id}/edit', [CriteriaController::class, 'edit'])->middleware('admin');

@@ -1,12 +1,13 @@
 @extends('dashboard.layouts.main')
 @section('content')
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Criteria : {{ $criteria_name }}</h1>
+    <div class="align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Criteria : {{ $criteria_name }}</h1><h6>{{ $factors->name }}</h6>
+        
     </div>
-    <h6>{{ $factors->name }}</h6>
-  
-<a class="btn btn-info mb-3" href="/dashboard/criterias">Kembali</a>
+    
+
+{{-- <a class="btn btn-info mb-3" href="/dashboard/criterias">Kembali</a> --}}
 <a class="btn btn-warning mb-3" href="/dashboard/ideal_profile/{{ $criteria_id }}">Atur Profil Ideal</a>
 
     <div class="table-responsive">
