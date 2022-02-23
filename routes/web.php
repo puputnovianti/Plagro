@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CalculationController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CriteriaController;
 use App\Http\Controllers\FactorController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\IdealProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RetailerController;
+use App\Models\Calculation;
 use App\Models\IdealProfile;
 use App\Models\RetailerProfile;
 use Illuminate\Support\Facades\Route;
@@ -77,4 +79,6 @@ Route::get('/retailer/retailer_profile', [RetailerProfile::class, 'index']);
 Route::get('/retailer/retailer_profile/create', [RetailerProfile::class, 'create']);
 
 
-Route::get('dashboard/ideal_profile', [IdealProfileController::class, 'index']);
+Route::get('dashboard/ideal_profile', [IdealProfileController::class, 'index'])->middleware('admin');;
+
+Route::get('dashboard/calculation', [CalculationController::class, 'index'])->middleware('admin');;
