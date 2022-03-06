@@ -68,12 +68,12 @@ class DatabaseSeeder extends Seeder
         ]);
         Profile::create([
             'criteria_id' => 3,
-            'name' => 'dua arah',
+            'name' => 'Dua arah',
             'score' => 4
         ]);
         Profile::create([
             'criteria_id' => 3,
-            'name' => 'satu arah',
+            'name' => 'Satu arah',
             'score' => 2
         ]);
 
@@ -91,7 +91,7 @@ class DatabaseSeeder extends Seeder
             'is_admin' => 1
         ]);
         User::create([
-            'name' => 'retailer',
+            'name' => 'Puput',
             'email' => 'puputnovianti99@gmail.com',
             'password' => Hash::make('password'),
             'is_admin' => 0

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Criteria;
-use App\Models\Factor;
+use App\Models\Calculation;
 use App\Models\Profile;
 use App\Models\Retailer;
 use App\Models\RetailerProfile;
@@ -68,6 +68,7 @@ class RetailerController extends Controller
                 RetailerProfile::create($data2);
             }
         }
+
         return redirect('retailer');
     }
 
