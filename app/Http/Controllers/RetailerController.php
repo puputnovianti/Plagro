@@ -22,7 +22,10 @@ class RetailerController extends Controller
     public function index()
     {
         return view(
-            'retailer.index'
+            'retailer.index',
+            [
+                'retailer' => Retailer::orderBy('id')->first()
+            ]
         );
     }
 
@@ -78,11 +81,14 @@ class RetailerController extends Controller
 
     public function show($id)
     {
-        $user = User::find($id);
+        $retailer = Retailer::find($id);
         return view(
-            'retailer.index',
+            'retailer.retailer',
             [
-                'name' => $user->name,
+                'address' => $retailer->address,
+                'phone' => $retailer->phone,
+                'location' => $retailer->location,
+                'profiles' => $retailer->retailerProfile,
             ]
         );
     }

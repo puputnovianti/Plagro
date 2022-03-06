@@ -77,6 +77,7 @@ Route::post('retailer', [RetailerController::class, 'store'])->middleware('retai
 
 Route::get('/retailer/retailer_profile', [RetailerProfile::class, 'index']);
 Route::get('/retailer/retailer_profile/create', [RetailerProfile::class, 'create']);
+Route::get('/retailer/retailer/{retailer:id}', [RetailerController::class, 'show']);
 
 
 Route::get('dashboard/ideal_profile', [IdealProfileController::class, 'index'])->middleware('admin');;

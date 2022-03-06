@@ -23,6 +23,6 @@ class Profile extends Model
 
     public function retailerProfile()
     {
-        return $this->hasOne(RetailerProfile::class);
+        return $this->hasMany(RetailerProfile::class);
     }
 }
