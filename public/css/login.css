@@ -1,0 +1,14 @@
+html body{
+    width: 100%;
+    height: 100%;
+    background-color: #a0c9b4;
+}
+
+.f{
+    border-radius: 25px;
+    background-color: #fff;
+}
+.btn{
+    border-radius: 25px;
+    width: 200px;
+}
