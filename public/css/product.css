@@ -38,7 +38,12 @@ background-size: cover;
 overflow: hidden;
 }
 
-
+.btn{
+  width: 90px;
+}
+.r{
+  width: 150px;
+}
 
 #about{
   background-color: #a0c9b4;
