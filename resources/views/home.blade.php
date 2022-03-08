@@ -14,14 +14,6 @@
 </head>
 
 <body>
-  <!-- <header class="site-header sticky-top py-1 bg-white">
-    <nav class="container d-flex flex-column flex-md-row  ms-auto">
-      <a class="py-2 navbar-brand text-black" href="#" aria-label="Product">Plagro.id</a>
-      <button class="btn btn-success" style="border-radius: 25px;">Login</button>
-      <a class="py-2 d-none d-md-inline-block btn btn-success" href="/login" style="border-radius: 25px;">Login</a>
-    </nav>
-  </header> -->
-
   <nav class="navbar navbar-expand-lg bg-white site-header sticky-top py-3">
     <div class="container">
       <a class="navbar-brand text-black" href="#">Plagro.id</a>

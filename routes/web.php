@@ -70,7 +70,7 @@ Route::get('/dashboard', [AdminController::class, 'index'])->middleware('admin')
 
 // Route::resource('/retailer', RetailerController::class)->middleware('retailer');
 Route::get('retailer', [RetailerController::class, 'index'])->middleware('retailer');
-Route::get('retailer/create', [RetailerController::class, 'create'])->middleware('retailer');
+Route::get('retailer/create', [RetailerController::class, 'create']);
 Route::post('retailer', [RetailerController::class, 'store'])->middleware('retailer');
 
 

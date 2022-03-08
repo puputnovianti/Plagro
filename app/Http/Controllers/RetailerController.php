@@ -24,7 +24,8 @@ class RetailerController extends Controller
         return view(
             'retailer.index',
             [
-                'retailer' => Retailer::orderBy('id')->first()
+                'retailers' => Retailer::orderBy('id')->first(),
+                'profiles' => RetailerProfile::orderBy('id')->first(),
             ]
         );
     }
@@ -34,11 +35,13 @@ class RetailerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
+        $user = User::find($id);
         return view('retailer.create', [
             'criterias' => Criteria::with(['profiles'])->get(),
             'profiles' => Profile::all(),
+            'user_id' => $user->user_id
         ]);
     }
 

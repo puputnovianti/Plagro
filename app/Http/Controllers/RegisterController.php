@@ -22,7 +22,7 @@ class RegisterController extends Controller
 
         $validatedData['password'] = bcrypt($validatedData['password']);
         User::create($validatedData);
-        $request->session()->flash('success', 'Registrasi berhasil, silahkan Login!');
+        $request->session()->flash('success', 'Registrasi berhasil, silahkan melengkapi data diri dan profil lokasi!');
         return redirect('/login');
     }
 }
