@@ -10,6 +10,7 @@ use App\Models\RetailerProfile;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class RetailerController extends Controller
@@ -24,8 +25,7 @@ class RetailerController extends Controller
         return view(
             'retailer.index',
             [
-                'retailers' => Retailer::orderBy('id')->first(),
-                'profiles' => RetailerProfile::orderBy('id')->first(),
+                'retailers' => Retailer::where('user_id', Auth::user()->id)->first()
             ]
         );
     }
@@ -35,13 +35,12 @@ class RetailerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
-        $user = User::find($id);
         return view('retailer.create', [
             'criterias' => Criteria::with(['profiles'])->get(),
             'profiles' => Profile::all(),
-            'user_id' => $user->user_id
+
         ]);
     }
 

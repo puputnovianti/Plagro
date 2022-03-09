@@ -11,11 +11,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
   <title>Plagro.id</title>
-  {{-- <style>
+  <style>
     .isi {
-      height: 1000px;
+      height: 500px;
     }
-  </style> --}}
+  </style>
 </head>
 
 <body>
