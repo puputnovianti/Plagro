@@ -88,9 +88,9 @@ class RetailerController extends Controller
         return view(
             'retailer.retailer',
             [
-                'address' => $retailer->address,
-                'phone' => $retailer->phone,
-                'location' => $retailer->location,
+                // 'address' => $retailer->address,
+                // 'phone' => $retailer->phone,
+                // 'location' => $retailer->location,
                 'profiles' => $retailer->retailerProfile,
             ]
         );
