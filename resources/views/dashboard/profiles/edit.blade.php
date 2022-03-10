@@ -6,7 +6,7 @@
   </div>
   <div class="col-lg-8">
     <form action="/dashboard/profiles/{{ $profile->id }}" method="post">
-    @method('put')
+      @method('put')
       @csrf
       <div class="mb-3 mt-5">
         <input name="criteria_id" type="hidden" value="{{ $profile->criteria->id }}" class="form-control">
@@ -19,7 +19,7 @@
         <label for="score" class="form-label">Nilai</label>
         <input name="score" type="text" value="{{ $profile->score }}" class="form-control">
       </div>
-      <button type="submit" class="btn btn-primary mt-3">Ubah Profile</button>
+      <button type="submit" class="btn btn-success rounded-pill mt-3">Ubah Profile</button>
     </form>
   </div>
   </div>

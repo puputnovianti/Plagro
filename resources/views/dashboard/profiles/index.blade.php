@@ -2,7 +2,7 @@
 @section('content')
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Profiles</h1>
+        <h1 class="h2">Profil</h1>
     </div>
     {{-- <a class="btn btn-primary mb-3" href="/dashboard/profiles/create">Tambah Profil</a> --}}
     <div class="table-responsive">
@@ -28,7 +28,7 @@
                         <form action="/dashboard/profiles/{{ $profile->id }}" method="POST" class="d-inline">
                             @method('delete')
                             @csrf
-                         <button type="submit" class="badge bg-danger border-0"><span data-feather="x-circle"></span></button>
+                            <button type="submit" class="badge bg-danger border-0"><span data-feather="x-circle"></span></button>
                         </form>
                     </td>
                 </tr>

@@ -12,7 +12,7 @@ class Retailer extends Authenticatable
 
     protected $guarded = ['id'];
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

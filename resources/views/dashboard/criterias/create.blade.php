@@ -17,8 +17,8 @@
         <option value="{{ $factor->id }}">{{$factor->name}}</option>
         @endforeach
       </select>
-      <button type="submit" class="btn btn-primary mt-3">Tambah</button>
+      <button type="submit" class="btn btn-success rounded-pill mt-3">Tambah</button>
     </form>
   </div>
 </main>
-  @endsection
+@endsection

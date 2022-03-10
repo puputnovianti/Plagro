@@ -21,7 +21,7 @@
         <label for="score" class="form-label">Nilai</label>
         <input name="score" type="text" class="form-control">
       </div>
-      <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+      <button type="submit" class="btn btn-success rounded-pill mt-3">Simpan</button>
     </form>
   </div>
   @endsection

@@ -22,7 +22,7 @@
         @endif
         @endforeach
       </select>
-      <button type="submit" class="btn btn-primary mt-3">Ubah Kriteria</button>
+      <button type="submit" class="btn btn-success rounded-pill mt-3">Ubah Kriteria</button>
     </form>
   </div>
   </div>

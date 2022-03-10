@@ -3,7 +3,7 @@
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <input class="form-control w-100 rounded-pill bg-light border border-success ms-3" type="text" placeholder="Search" aria-label="Search">
+  <input class="form-control w-100 rounded-pill bg-light border border-success ms-3" type="text" placeholder="Cari data calon retailer" aria-label="Search">
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
       <form action="/logout" method="post">
