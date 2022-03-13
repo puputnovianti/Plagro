@@ -1,0 +1,11 @@
+.b{
+    background-color: #bcddcd;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+
+
+.cap{
+    text-transform: capitalize;
+}
