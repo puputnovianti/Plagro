@@ -30,7 +30,7 @@
           <td>{{ $retailers->location }}</td>
         </tr>
       </table>
-      <a href="/retailer/retailer/{{ auth()->user()->id }}" class="btn btn-success rounded-pill mb-3">Lihat Profil Lokasi</a>
+      <a href="/retailer/retailer/{{ $retailers->id }}" class="btn btn-success rounded-pill mb-3">Lihat Profil Lokasi</a>
       @endisset
 
     </div>

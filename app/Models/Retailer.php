@@ -17,7 +17,7 @@ class Retailer extends Authenticatable
         return $this->belongsTo(User::class);
     }
 
-    public function retailerProfile()
+    public function retailerProfiles()
     {
         return $this->hasMany(RetailerProfile::class);
     }
