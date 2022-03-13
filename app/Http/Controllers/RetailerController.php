@@ -89,6 +89,7 @@ class RetailerController extends Controller
             'retailer.retailer',
             [
                 'profiles' => $retailer->retailerProfiles,
+                'retailer_id' => $retailer->id
             ]
         );
     }
@@ -101,7 +102,11 @@ class RetailerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $retailer = Retailer::find($id);
+        return view('retailer.edit', [
+            'retailer' => $retailer,
+            'user' => User::all()
+        ]);
     }
 
     /**
@@ -113,7 +118,12 @@ class RetailerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Retailer::find($id)->update([
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'location' => $request->location
+        ]);
+        return redirect('retailer');
     }
 
     /**

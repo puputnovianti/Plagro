@@ -34,6 +34,7 @@
         </tr>
       </table>
       <a href="/retailer/retailer/{{ $retailers->id }}" class="btn btn-success rounded-pill mb-3">Lihat Profil Lokasi</a>
+      <a class="btn border border-success rounded-pill mb-3" href="/retailer/{{ $retailers->id }}/edit">Ubah</a>
       @endisset
 
     </div>

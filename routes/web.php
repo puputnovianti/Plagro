@@ -72,6 +72,8 @@ Route::get('/dashboard', [AdminController::class, 'index'])->middleware('admin')
 Route::get('retailer', [RetailerController::class, 'index'])->middleware('retailer');
 Route::get('retailer/create', [RetailerController::class, 'create']);
 Route::post('retailer', [RetailerController::class, 'store'])->middleware('retailer');
+Route::get('retailer/{id}/edit', [RetailerController::class, 'edit']);
+Route::put('retailer/{id}', [RetailerController::class, 'update']);
 
 
 
