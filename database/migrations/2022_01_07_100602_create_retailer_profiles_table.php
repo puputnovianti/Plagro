@@ -17,6 +17,8 @@ class CreateRetailerProfilesTable extends Migration
             $table->increments('id');
             $table->integer('retailer_id')->unsigned();
             $table->foreign('retailer_id')->references('id')->on('retailers')->onDelete('cascade');
+            $table->integer('criteria_id')->unsigned();
+            $table->foreign('criteria_id')->references('id')->on('criterias')->onDelete('cascade');
             $table->integer('profile_id')->unsigned();
             $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
             $table->timestamps();

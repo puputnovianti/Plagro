@@ -14,6 +14,6 @@
   </table>
 
   <a class="btn btn-success rounded-pill mt-3" href="/retailer">Kembali</a>
-  <a class="btn border border-success rounded-pill mt-3" href="/retailer/retailer_profile/{{ $retailer_id }}">Ubah</a>
+  <a class="btn border border-success rounded-pill mt-3" href="/retailer/retailer_profile/{{ $retailer_id }}/edit">Ubah</a>
 </div>
 @endsection

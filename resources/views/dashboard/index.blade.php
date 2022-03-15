@@ -69,7 +69,7 @@
           <th scope="col">No</th>
           <th scope="col">Nama</th>
           <th scope="col">No.HP</th>
-          <th scope="col">Lokasi</th>
+          <th scope="col">Lokasi Retail</th>
           <th scope="col">Aksi</th>
         </tr>
       </thead>
@@ -80,7 +80,7 @@
           <td>{{ $retailer->user->name }}</td>
           <td>{{ $retailer->phone }}</td>
           <td>{{ $retailer->location }}</td>
-          <td><a class="badge bg-info" href="/dashboard/criterias/{{$retailer->id}}"><span data-feather="eye"></span></a></td>
+          <td><a class="badge bg-info" href=""><span data-feather="eye"></span></a></td>
         </tr>
         @endforeach
       </tbody>

@@ -2,17 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Criteria;
+use App\Models\Retailer;
+use App\Models\RetailerProfile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RetailerProfileController extends Controller
 {
-    public function index()
+
+    public function edit($id)
     {
-        return view('retailer.retailer_profile.index');
+        $retailer = Retailer::find($id);
+        return view('retailer.retailer_profile.edit', [
+            'profiles' => $retailer,
+            'criterias' => Criteria::all(),
+            'retailer' => $retailer
+        ]);
     }
 
-    public function create()
+    public function update(Request $request)
     {
-        return view('retailer.retailer_profile.create');
+
+        for ($i = 0; $i < count($request->profile_id); $i++) {
+
+            DB::table('retailer_profiles')
+                ->where('criteria_id', $request->criteria_id[$i])
+                ->update([
+                    'profile_id' => $request->profile_id[$i],
+
+                ]);
+        }
+        return redirect('retailer');
     }
 }

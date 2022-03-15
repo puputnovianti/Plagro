@@ -23,6 +23,7 @@
                 <input name="location" type="text" class="form-control" value="{{ $retailer->location }}">
             </div>
             <button type="submit" class="btn btn-success rounded-pill mt-3">Ubah</button>
+            <a href="/retailer" class="btn border border-success mt-3 rounded-pill">Batal</a>
         </form>
     </div>
 </div>

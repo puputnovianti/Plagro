@@ -10,6 +10,7 @@ use App\Http\Controllers\IdealProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RetailerController;
+use App\Http\Controllers\RetailerProfileController;
 use App\Models\Calculation;
 use App\Models\IdealProfile;
 use App\Models\RetailerProfile;
@@ -74,12 +75,13 @@ Route::get('retailer/create', [RetailerController::class, 'create']);
 Route::post('retailer', [RetailerController::class, 'store'])->middleware('retailer');
 Route::get('retailer/{id}/edit', [RetailerController::class, 'edit']);
 Route::put('retailer/{id}', [RetailerController::class, 'update']);
-
-
-
-Route::get('/retailer/retailer_profile', [RetailerProfile::class, 'index']);
-Route::get('/retailer/retailer_profile/create', [RetailerProfile::class, 'create']);
 Route::get('/retailer/retailer/{retailer:id}', [RetailerController::class, 'show']);
+
+
+
+Route::get('retailer/retailer_profile/{id}/edit', [RetailerProfileController::class, 'edit']);
+Route::put('retailer/retailer_profile/{id}', [RetailerProfileController::class, 'update']);
+
 
 
 Route::get('dashboard/ideal_profile', [IdealProfileController::class, 'index'])->middleware('admin');;

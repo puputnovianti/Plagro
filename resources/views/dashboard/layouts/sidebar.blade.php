@@ -1,5 +1,5 @@
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse mt-3">
-  <div class="position-sticky pt-3">
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+  <div class="position-sticky mt-4">
     <ul class="nav flex-column">
       <li class="nav-item">
         <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="/dashboard">
@@ -36,6 +36,12 @@
           <span data-feather="bar-chart-2"></span>
           Hasil Perhitungan
         </a>
+      </li>
+      <li class="nav-item mt-5 ms-3">
+        <form action="/logout" method="post">
+          @csrf
+          <button class="btn btn-outline-success w-50 text-dark border border-success rounded-pill">Logout</button>
+        </form>
       </li>
     </ul>
   </div>

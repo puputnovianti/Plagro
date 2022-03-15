@@ -71,6 +71,8 @@ class RetailerController extends Controller
             }
         }
 
+
+
         return redirect('retailer');
     }
 
@@ -125,6 +127,8 @@ class RetailerController extends Controller
         ]);
         return redirect('retailer');
     }
+
+
 
     /**
      * Remove the specified resource from storage.
