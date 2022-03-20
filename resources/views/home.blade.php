@@ -23,10 +23,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="py-2 d-none d-md-inline-block me-4 btn btn-success btn-sm" aria-current="page" href="https://plagro.id/" style="border-radius: 25px;">Shop</a>
+            <a class="py-2 d-none d-md-inline-block me-4 btn btn-outline-success btn-sm s" aria-current="page" href="https://plagro.id/" style="border-radius: 25px;">Shop</a>
           </li>
           <li class="nav-item">
-            <a class="py-2 d-none d-md-inline-block btn btn-success btn-sm" aria-current="page" href="/login" style="border-radius: 25px;">Login</a>
+            <a class="py-2 d-none d-md-inline-block btn btn-success btn-sm l" aria-current="page" href="/login" style="border-radius: 25px;">Login</a>
           </li>
         </ul>
       </div>

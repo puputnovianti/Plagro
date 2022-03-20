@@ -31,6 +31,7 @@
 
       @foreach($criterias as $criteria)
       <div class="mb-3 mt-3">
+        <input type="hidden" value="{{ $criteria->id }}" name="criteria_id[]">
         <label class="form-label col-form-label">{{$criteria->name}}</label>
         <select class="form-select" name="profile_id[]" aria-label="Default select example">
           @foreach($criteria->profiles as $profile)

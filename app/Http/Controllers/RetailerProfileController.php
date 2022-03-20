@@ -21,13 +21,19 @@ class RetailerProfileController extends Controller
         ]);
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-
+        $retailer = Retailer::find($id);
         for ($i = 0; $i < count($request->profile_id); $i++) {
 
             DB::table('retailer_profiles')
-                ->where('criteria_id', $request->criteria_id[$i])
+                ->where(
+                    'retailer_id',
+                    $retailer->id
+                )->orWhere(
+                    'criteria_id',
+                    $request->criteria_id[$i]
+                )
                 ->update([
                     'profile_id' => $request->profile_id[$i],
 

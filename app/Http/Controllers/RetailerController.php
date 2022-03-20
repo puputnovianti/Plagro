@@ -64,6 +64,7 @@ class RetailerController extends Controller
             foreach ($data['profile_id'] as $item => $value) {
                 $data2 = array(
                     'retailer_id' => $retailer->id,
+                    'criteria_id' => $data['criteria_id'][$item],
                     'profile_id' => $data['profile_id'][$item],
 
                 );
