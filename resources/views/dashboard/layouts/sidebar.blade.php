@@ -37,10 +37,10 @@
           Hasil Perhitungan
         </a>
       </li>
-      <li class="nav-item mt-5 ms-3">
+      <li class="nav-item mt-5 m-2">
         <form action="/logout" method="post">
           @csrf
-          <button class="btn btn-outline-success w-50 text-dark border border-success rounded-pill">Logout</button>
+          <button class="btn btn-outline-success w-100 border border-success rounded-pill logout">Logout</button>
         </form>
       </li>
     </ul>

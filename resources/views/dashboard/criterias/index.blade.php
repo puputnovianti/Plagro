@@ -3,9 +3,20 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Kriteria</h1>
+    <a class="btn btn-success rounded-pill ms-auto" href="/dashboard/criterias/create">Tambah Kriteria</a>
   </div>
-  <a class="btn btn-success mb-3 rounded-pill" href="/dashboard/criterias/create">Tambah Kriteria</a>
-  <div class="table-responsive">
+
+  @if(session()->has('success'))
+  <div class="alert alert-success alert-dismissible fade show mt-3 col-lg-8" role="alert">
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif
+
+  <!-- <div class="d-flex">
+    <a class="btn btn-success mb-3 rounded-pill ms-auto" href="/dashboard/criterias/create">Tambah Kriteria</a>
+  </div> -->
+  <div class="table-responsive shadow p-3">
     <table class="table table-striped table-sm">
       <thead>
         <tr>

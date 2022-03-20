@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.main')
 @section('content')
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-  <div class="d-flex justify-content-evenly flex-wrap flex-md-nowrap align-items-center py-5 mb-3 a mt-3">
+  <div class="d-flex justify-content-evenly flex-wrap flex-md-nowrap align-items-center py-5 mb-3 a mt-3 shadow-sm">
     <div>
       <h2 class="h2">Selamat datang, Admin!</h2>
       <h6 class="text-muted">Sistem rekomendasi pemilihan lokasi retail <br>Plagro.id </h6>
@@ -61,30 +61,32 @@
     </svg>
   </div>
 
-  <h2>Calon Retailer</h2>
-  <div class="table-responsive">
-    <table class="table table-striped table-sm">
-      <thead>
-        <tr>
-          <th scope="col">No</th>
-          <th scope="col">Nama</th>
-          <th scope="col">No.HP</th>
-          <th scope="col">Lokasi Retail</th>
-          <th scope="col">Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach($retailers as $retailer)
-        <tr>
-          <td>{{ $loop->iteration }}</td>
-          <td>{{ $retailer->user->name }}</td>
-          <td>{{ $retailer->phone }}</td>
-          <td>{{ $retailer->location }}</td>
-          <td><a class="badge bg-info" href=""><span data-feather="eye"></span></a></td>
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
+  <div class="shadow p-3">
+    <h2>Calon Retailer</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama</th>
+            <th scope="col">No.HP</th>
+            <th scope="col">Lokasi Retail</th>
+            <th scope="col">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach($retailers as $retailer)
+          <tr>
+            <td>{{ $loop->iteration }}</td>
+            <td>{{ $retailer->user->name }}</td>
+            <td>{{ $retailer->phone }}</td>
+            <td>{{ $retailer->location }}</td>
+            <td><a class="badge bg-info" href=""><span data-feather="eye"></span></a></td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
+    </div>
   </div>
 </main>
 @endsection

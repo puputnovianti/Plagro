@@ -1,20 +1,32 @@
 @extends('retailer.layouts.main')
 @section('content')
-<div class="container mt-4">
-  <h1>Selamat datang, <b class="cap">{{ auth()->user()->name }}</b></h1>
+<div class="container">
   @empty($retailers)
-  <div class="b mb-4">
-    <h4 class="text-muted">Anda belum melengkapi data diri dan profil lokasi ritel</h4>
-    <h5 class="text-muted">Silahkan melengkapi data diri dan profil lokasi ritel anda!</h5>
-    <a href="/retailer/create" class="btn btn-success mb-3 rounded-pill mt-3">Lengkapi Data Diri dan Profil Lokasi</a>
+  <div class="row align-items-center mt-5">
+    <div class="col mt-5">
+      <div class="alert alert-success shadow" role="alert">
+        <h3 class="alert-heading">Selamat datang, <b class="cap">{{ auth()->user()->name }}</b></h3>
+        <p>Akun Anda telah terdaftar. Silahkan melengkapi data diri dan profil lokasi retail anda dengan menekan tombol dibawah ini.</p>
+        <hr>
+        <p class="mb-0"><a href="/retailer/create" class="btn btn-success rounded-pill">Lengkapi Data Diri dan Profil Lokasi</a></p>
+      </div>
+    </div>
   </div>
   @endempty
 
 
   <div class="row">
     <div class="col-md-10">
+
+      @if(session()->has('success'))
+      <div class="alert alert-success alert-dismissible fade show mt-5" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      @endif
+
       @isset($retailers)
-      <h3 class="text-muted mt-5">Data diri anda</h3>
+      <h3 class="text-muted mt-5">Data diri Anda</h3>
       <table class="table table-hover">
         <tr>
           <th>Nama</th>

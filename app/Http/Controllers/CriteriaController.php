@@ -33,7 +33,7 @@ class CriteriaController extends Controller
             'factor_id' => $request->factor_id,
         ]);
 
-        return redirect('dashboard/criterias');
+        return redirect('dashboard/criterias')->with('success', 'Data kriteria berhasil ditambahkan. Silahkan menambahkan data profil!');
     }
 
 

@@ -74,7 +74,7 @@ class RetailerController extends Controller
 
 
 
-        return redirect('retailer');
+        return redirect('retailer')->with('success', 'Data Anda berhasil ditambahkan');
     }
 
     /**

@@ -4,11 +4,11 @@
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Edit Kriteria</h1>
   </div>
-  <div class="col-lg-8">
+  <div class="col-lg-8 shadow p-3">
     <form method="POST" action="/dashboard/criterias/{{ $criteria->id }}">
       @method('put')
       @csrf
-      <div class="mb-3 mt-5">
+      <div class="mb-3">
         <label for="name" class="form-label">Nama Kriteria</label>
         <input name="name" type="text" value="{{ $criteria->name }}" class="form-control">
       </div>
