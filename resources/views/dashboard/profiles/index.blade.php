@@ -6,7 +6,7 @@
     </div>
     {{-- <a class="btn btn-primary mb-3" href="/dashboard/profiles/create">Tambah Profil</a> --}}
     <div class="table-responsive shadow p-3">
-        <table class="table table-striped table-sm">
+        <table class="table table-sm">
             <thead>
                 <tr>
                     <th scope="col">No</th>

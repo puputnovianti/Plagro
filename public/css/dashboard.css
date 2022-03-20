@@ -112,3 +112,13 @@ body {
   height: 215px;
   border-radius: 20px;
 }
+
+.table th{
+ background-color: #198754;
+ color: #f8f9fa;
+}
+
+.table tr:nth-child(even){
+  background-color: #d7ebe1;
+}
+

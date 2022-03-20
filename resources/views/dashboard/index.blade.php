@@ -64,7 +64,7 @@
   <div class="shadow p-3">
     <h2>Calon Retailer</h2>
     <div class="table-responsive">
-      <table class="table table-striped table-sm">
+      <table class="table table-sm">
         <thead>
           <tr>
             <th scope="col">No</th>
