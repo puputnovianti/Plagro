@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
 
         Criteria::create([
             'factor_id' => 1,
-            'name' => 'Frekuensi keramaian'
+            'name' => 'Jumlah pesaing (radius 2km)'
         ]);
         Criteria::create([
             'factor_id' => 1,
@@ -38,32 +38,38 @@ class DatabaseSeeder extends Seeder
 
         Profile::create([
             'criteria_id' => 1,
-            'name' => 'Sangat ramai',
-            'score' => 4
+            'name' => 'Lebih dari 6',
+            'score' => 1
         ]);
         Profile::create([
             'criteria_id' => 1,
-            'name' => 'Ramai',
+            'name' => '5 - 6',
+            'score' => 2
+        ]);
+        Profile::create([
+            'criteria_id' => 1,
+            'name' => '3 - 4',
             'score' => 3
         ]);
         Profile::create([
             'criteria_id' => 1,
-            'name' => 'Sepi',
-            'score' => 2
+            'name' => '1 - 3',
+            'score' => 4
         ]);
         Profile::create([
             'criteria_id' => 1,
-            'name' => 'Sangat sepi',
-            'score' => 1
+            'name' => 'Tidak ada',
+            'score' => 5
         ]);
+
         Profile::create([
             'criteria_id' => 2,
-            'name' => 'Kendaraan roda dua',
+            'name' => 'Hanya dapat diakses kendaraan roda dua',
             'score' => 2
         ]);
         Profile::create([
             'criteria_id' => 2,
-            'name' => 'Kendaraan roda empat',
+            'name' => 'Dapat diakses kendaraan roda empat',
             'score' => 4
         ]);
         Profile::create([
@@ -78,10 +84,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Factor::create([
-            'name' => 'Secondary Factor'
+            'name' => 'Core Factor'
         ]);
         Factor::create([
-            'name' => 'Core Factor'
+            'name' => 'Secondary Factor'
         ]);
 
         User::create([
