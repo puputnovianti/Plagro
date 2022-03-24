@@ -97,7 +97,7 @@ class DatabaseSeeder extends Seeder
             'is_admin' => 1
         ]);
         User::create([
-            'name' => 'Puput',
+            'name' => 'Puput Novianti',
             'email' => 'puputnovianti99@gmail.com',
             'password' => Hash::make('password'),
             'is_admin' => 0
@@ -110,12 +110,12 @@ class DatabaseSeeder extends Seeder
 
         IdealProfile::create([
             'criteria_id' => 2,
-            'profile_id' => 5,
+            'profile_id' => 7,
         ]);
 
         IdealProfile::create([
             'criteria_id' => 3,
-            'profile_id' => 7,
+            'profile_id' => 8,
         ]);
     }
 }

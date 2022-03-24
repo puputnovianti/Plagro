@@ -23,9 +23,10 @@ class RetailerController extends Controller
     public function index()
     {
         return view(
-            'retailer.index',
+            'home',
             [
-                'retailers' => Retailer::where('user_id', Auth::user()->id)->first()
+                'criterias' => Criteria::with(['profiles'])->get(),
+                'profiles' => Profile::all(),
             ]
         );
     }
@@ -54,9 +55,8 @@ class RetailerController extends Controller
     {
         $data = $request->all();
         $retailer = new Retailer;
-        $retailer->user_id = $data['user_id'];
-        $retailer->address = $data['address'];
-        $retailer->phone = $data['phone'];
+        $retailer->email = $data['email'];
+        $retailer->name = $data['name'];
         $retailer->location = $data['location'];
         $retailer->save();
 
@@ -74,7 +74,7 @@ class RetailerController extends Controller
 
 
 
-        return redirect('retailer')->with('success', 'Data Anda berhasil ditambahkan');
+        return redirect()->back()->with('success', 'Pendaftaran berhasil dilakukan. silahkan cek email anda.');
     }
 
     /**

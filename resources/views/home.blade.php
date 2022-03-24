@@ -25,13 +25,19 @@
           <li class="nav-item">
             <a class="py-2 d-none d-md-inline-block me-4 btn btn-outline-success btn-sm s" aria-current="page" href="https://plagro.id/" style="border-radius: 25px;">Shop</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="py-2 d-none d-md-inline-block btn btn-success btn-sm l" aria-current="page" href="/login" style="border-radius: 25px;">Login</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
   </nav>
+  @if(session()->has('success'))
+  <div class="alert alert-success alert-dismissible fade show mt-5" role="alert">
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif
 
   <section class="jumbotron">
     <div class="container">
@@ -105,12 +111,12 @@
     </div>
   </section>
 
-  <svg width="1349" height="110" viewBox="0 0 1349 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- <svg width="1349" height="110" viewBox="0 0 1349 110" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 12L80 18.0187C160 23.8125 320 36.1875 480 30C640 23.8125 800 0.187488 960 0.0187378C1120 0.187488 1280 23.8125 1360 36.0187L1440 48V120H1360C1280 120 1120 120 960 120C800 120 640 120 480 120C320 120 160 120 80 120H0V12Z" fill="#A0C9B4" />
-  </svg>
+  </svg> -->
 
   <section id="about">
-    <div class="container">
+    <div class="container p-5">
       <div class="row text-center mb-3 justify-content-center">
         <div class="col">
           <h2>Tentang Kami</h2>
@@ -129,9 +135,9 @@
     </div>
   </section>
 
-  <svg width="1349" height="117" viewBox="0 0 1349 117" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- <svg width="1349" height="117" viewBox="0 0 1349 117" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 76L80 86.1175C160 96.425 320 116.375 480 116.517C640 116.375 800 96.425 960 86.1175C1120 76 1280 76 1360 76H1440V0H1360C1280 0 1120 0 960 0C800 0 640 0 480 0C320 0 160 0 80 0H0V76Z" fill="#A0C9B4" />
-  </svg>
+  </svg> -->
 
   <section id="service">
     <div class="container">
@@ -169,6 +175,64 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <section id="form">
+    <div class="container">
+      <div class="row text-center mb-3 mt-3 pt-3">
+        <div class="col">
+          <h2>Daftar sekarang dengan mengisi form di bawah ini</h2>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <main class="mt-4 mb-4 p-4 shadow col-lg-8">
+          <legend class="text-center">Silahkan melengkapi data diri dan profil lokasi ritel Anda</legend>
+          <div class="col-lg-12">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h3 class="text-muted">Data Diri</h3>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <form method="POST" action="/">
+              @csrf
+              <div class="mb-3 mt-3">
+                <label for="email" class="form-label">Email</label>
+                <input name="email" type="email" class="form-control">
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="name" class="form-label">Nama</label>
+                <input name="name" type="text" class="form-control">
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="location" class="form-label">Lokasi Ritel</label>
+                <input name="location" type="text" class="form-control">
+              </div>
+
+              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h3 class="text-muted">Profil Lokasi</h3>
+              </div>
+
+              @foreach($criterias as $criteria)
+              <div class="mb-3 mt-3">
+                <input type="hidden" value="{{ $criteria->id }}" name="criteria_id[]">
+                <label class="form-label col-form-label">{{$criteria->name}}</label>
+                <select class="form-select" name="profile_id[]" aria-label="Default select example">
+                  @foreach($criteria->profiles as $profile)
+                  <option value="{{ $profile->id }}">{{ $profile->name }}</option>
+                  @endforeach
+                </select>
+              </div>
+              @endforeach
+
+
+              <button type="submit" class="btn btn-success rounded-pill mt-2 ">Daftar</button>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+
   </section>
 
 

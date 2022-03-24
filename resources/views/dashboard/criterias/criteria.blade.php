@@ -33,7 +33,7 @@
 
 
     <div class="shadow p-3 col-md-6">
-      <table class="table table-striped table-sm">
+      <table class="table table-sm">
         <thead>
           <tr>
             <th scope="col">No</th>
@@ -49,29 +49,20 @@
             <td>{{ $profile->name }}</td>
             <td>{{ $profile->score }}</td>
             <td>
-              <a class="badge bg-warning" href="/dashboard/profiles/{{$profile->id}}/edit"><span data-feather="edit"></span></a>
+              <a class="badge bg-warning m-1" href="/dashboard/profiles/{{$profile->id}}/edit"><span data-feather="edit"></span></a>
               <form action="/dashboard/profiles/{{ $profile->id }}" method="POST" class="d-inline">
                 @method('delete')
                 @csrf
-                <button type="submit" class="badge bg-danger border-0"><span data-feather="x-circle"></span></button>
+                <button type="submit" class="badge bg-danger border-0 m-1"><span data-feather="x-circle"></span></button>
               </form>
             </td>
           </tr>
           @endforeach
         </tbody>
       </table>
-      <a class="btn btn-warning my-2 rounded-pill" href="/dashboard/ideal_profile/{{ $criteria_id }}">Atur Profil Ideal</a>
+      <a class="btn btn-warning my-1 rounded-pill" href="/dashboard/ideal_profile/{{ $criteria_id }}">Atur Profil Ideal</a>
     </div>
-
-
-
-
   </div>
   @endisset
-
-
-
-
-  </main>
 </div>
 @endsection

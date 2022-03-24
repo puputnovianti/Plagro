@@ -11,13 +11,19 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RetailerController;
 use App\Http\Controllers\RetailerProfileController;
+use App\Mail\SendMail;
+use App\Mail\SendMailMarkdown;
 use App\Models\Calculation;
 use App\Models\IdealProfile;
 use App\Models\RetailerProfile;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
+
+
+Route::get('/markdown', function () {
+    Mail::to('ekapuput44@gmail.com')->send(new SendMailMarkdown());
     return view('home');
 });
 
@@ -70,12 +76,14 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/dashboard', [AdminController::class, 'index'])->middleware('admin');
 
 // Route::resource('/retailer', RetailerController::class)->middleware('retailer');
-Route::get('retailer', [RetailerController::class, 'index'])->middleware('retailer');
-Route::get('retailer/create', [RetailerController::class, 'create']);
-Route::post('retailer', [RetailerController::class, 'store'])->middleware('retailer');
-Route::get('retailer/{id}/edit', [RetailerController::class, 'edit']);
-Route::put('retailer/{id}', [RetailerController::class, 'update']);
-Route::get('/retailer/retailer/{retailer:id}', [RetailerController::class, 'show']);
+// Route::get('retailer', [RetailerController::class, 'index'])->middleware('retailer');
+Route::get('/', [RetailerController::class, 'index']);
+// Route::get('/', [RetailerController::class, 'create']);
+Route::post('/', [RetailerController::class, 'store']);
+
+// Route::get('retailer/{id}/edit', [RetailerController::class, 'edit']);
+// Route::put('retailer/{id}', [RetailerController::class, 'update']);
+// Route::get('/retailer/retailer/{retailer:id}', [RetailerController::class, 'show']);
 
 
 
