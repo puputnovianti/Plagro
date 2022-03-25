@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SendMailMarkdown extends Mailable
+class NotofikasiPendaftaran extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,6 +28,6 @@ class SendMailMarkdown extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.markdown');
+        return $this->markdown('emails.pendaftaran');
     }
 }

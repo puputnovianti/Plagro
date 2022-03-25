@@ -22,10 +22,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/markdown', function () {
-    Mail::to('ekapuput44@gmail.com')->send(new SendMailMarkdown());
-    return view('home');
-});
+// Route::get('/markdown', function () {
+//     Mail::to('ekapuput44@gmail.com')->send(new SendMailMarkdown());
+//     return view('home');
+// });
 
 Route::get('dashboard/categories', [CategoryController::class, 'index'])->middleware('admin');
 Route::get('dashboard/categories/create', [CategoryController::class, 'create'])->middleware('admin');

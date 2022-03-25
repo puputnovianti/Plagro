@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NotofikasiPendaftaran;
 use App\Models\Criteria;
 use App\Models\Calculation;
 use App\Models\Profile;
@@ -12,6 +13,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+
 
 class RetailerController extends Controller
 {
@@ -72,9 +75,8 @@ class RetailerController extends Controller
             }
         }
 
-
-
-        return redirect()->back()->with('success', 'Pendaftaran berhasil dilakukan. silahkan cek email anda.');
+        Mail::to($retailer->email)->send(new NotofikasiPendaftaran());
+        return redirect('/')->with('success', 'Pendaftaran berhasil dilakukan. silahkan cek email anda.');
     }
 
     /**

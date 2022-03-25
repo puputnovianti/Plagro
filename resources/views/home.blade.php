@@ -33,9 +33,11 @@
     </div>
   </nav>
   @if(session()->has('success'))
-  <div class="alert alert-success alert-dismissible fade show mt-5" role="alert">
-    {{ session('success') }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  <div class="container">
+    <div class="alert alert-success alert-dismissible fade show mt-5" role="alert">
+      {{ session('success') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
   </div>
   @endif
 
@@ -139,7 +141,7 @@
     <path d="M0 76L80 86.1175C160 96.425 320 116.375 480 116.517C640 116.375 800 96.425 960 86.1175C1120 76 1280 76 1360 76H1440V0H1360C1280 0 1120 0 960 0C800 0 640 0 480 0C320 0 160 0 80 0H0V76Z" fill="#A0C9B4" />
   </svg> -->
 
-  <section id="service">
+  <!-- <section id="service">
     <div class="container">
       <div class="row text-center mb-3 mt-3 pt-3">
         <div class="col">
@@ -175,7 +177,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section id="form">
     <div class="container">
