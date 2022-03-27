@@ -13,9 +13,6 @@
   </div>
   @endif
 
-  <!-- <div class="d-flex">
-    <a class="btn btn-success mb-3 rounded-pill ms-auto" href="/dashboard/criterias/create">Tambah Kriteria</a>
-  </div> -->
   <div class="table-responsive shadow p-3">
     <table class="table table-sm">
       <thead>

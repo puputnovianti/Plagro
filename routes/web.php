@@ -92,6 +92,7 @@ Route::put('retailer/retailer_profile/{id}', [RetailerProfileController::class, 
 
 
 
-Route::get('dashboard/ideal_profile', [IdealProfileController::class, 'index'])->middleware('admin');;
+Route::get('dashboard/ideal_profile', [IdealProfileController::class, 'index'])->middleware('admin');
 
-Route::get('dashboard/calculation', [CalculationController::class, 'index'])->middleware('admin');;
+Route::get('dashboard/calculation', [CalculationController::class, 'index'])->middleware('admin');
+Route::get('dashboard/calculation/{id}', [CalculationController::class, 'show'])->middleware('admin');

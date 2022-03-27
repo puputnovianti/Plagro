@@ -1,6 +1,6 @@
-.container {
+/* .container {
   max-width: 960px;
-}
+} */
 
 /*
  * Custom translucent site header
@@ -35,12 +35,6 @@
   padding: 2rem 1rem;
   /* background-color: #8e8e8e; */
 
-position: relative;
-background-image: url(../img/jumbotron.jpg) center center;
-width: 100%;
-height: 100%;
-background-size: cover;
-overflow: hidden;
 }
 
 .btn{
@@ -94,11 +88,12 @@ overflow: hidden;
  * Extra utilities
  */
 
-.flex-equal > * {
+/* .flex-equal > * {
   flex: 1;
-}
-@media (min-width: 768px) {
-  .flex-md-equal > * {
-    flex: 1;
+} */
+@media
+(max-width: 768px) {
+  .s {
+    display: none;
   }
 }

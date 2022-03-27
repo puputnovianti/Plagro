@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-white site-header sticky-top py-3">
+  <nav class="navbar navbar-expand-lg bg-white site-header py-3">
     <div class="container">
       <a class="navbar-brand text-black" href="#">Plagro.id</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,13 +25,11 @@
           <li class="nav-item">
             <a class="py-2 d-none d-md-inline-block me-4 btn btn-outline-success btn-sm s" aria-current="page" href="https://plagro.id/" style="border-radius: 25px;">Shop</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="py-2 d-none d-md-inline-block btn btn-success btn-sm l" aria-current="page" href="/login" style="border-radius: 25px;">Login</a>
-          </li> -->
         </ul>
       </div>
     </div>
   </nav>
+
   @if(session()->has('success'))
   <div class="container">
     <div class="alert alert-success alert-dismissible fade show mt-5" role="alert">
@@ -47,9 +45,9 @@
         <div class="col-md-4 mt-5">
           <h1 class="display-4 fw-bold">Plagro.id</h1>
           <p class="lead fw-normal">Bergabung menjadi mitra outlet kami.<br>Plagro.id menawarkan produk pertanian yang berkualitas.</p>
-          <a class="btn btn-success r" href="/register" style="border-radius: 25px;">Daftar Sekarang</a>
+          <a class="btn btn-success r" href="#form" style="border-radius: 25px;">Daftar Sekarang</a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8 s">
           <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" width="800" height="300" viewBox="0 0 758.67004 615.32637" xmlns:xlink="http://www.w3.org/1999/xlink">
             <path d="M826.3304,254.42005c-3.94109,43.42331-15.16888,89.21081-32.77756,133.38965-21.77541,54.633-51.52607,102.75355-86.03669,139.15916l-1.91519-1.66994c34.34355-36.23054,63.959-84.13863,85.64344-138.54566,19.59746-49.1666,31.25383-100.33187,33.7243-147.9418l2.44729.40972Q827.02652,246.76351,826.3304,254.42005Z" transform="translate(-220.66498 -142.33682)" fill="#f2f2f2" />
             <path d="M842.0269,506.61454c-48.47245,77.11608-107.27981,132.21582-165.59018,155.14809l-1.17954-2.16253C733.164,636.82626,791.627,582.00857,839.878,505.245Z" transform="translate(-220.66498 -142.33682)" fill="#f2f2f2" />
@@ -113,24 +111,15 @@
     </div>
   </section>
 
-  <!-- <svg width="1349" height="110" viewBox="0 0 1349 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 12L80 18.0187C160 23.8125 320 36.1875 480 30C640 23.8125 800 0.187488 960 0.0187378C1120 0.187488 1280 23.8125 1360 36.0187L1440 48V120H1360C1280 120 1120 120 960 120C800 120 640 120 480 120C320 120 160 120 80 120H0V12Z" fill="#A0C9B4" />
-  </svg> -->
-
   <section id="about">
-    <div class="container p-5">
-      <div class="row text-center mb-3 justify-content-center">
-        <div class="col">
-          <h2>Tentang Kami</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <iframe src="https://www.youtube.com/embed/xfmkF9tyE6U" frameborder="0" allowfullscreen width="450" height="250"></iframe>
+    <div class="container">
+      <div class="row align-items-center p-4">
+        <div class="col-md-5">
+          <iframe src="https://www.youtube.com/embed/xfmkF9tyE6U" frameborder="1" allowfullscreen min-width="450" min-height="350"></iframe>
         </div>
         <div class="col-md-6">
+          <h1 class="display-5 fw-bold">Penuhi Kebutuhan Anda Bersama Kami</h1>
           <p>Plagro.id merupakan sebuah brand yang menawarkan produk pertanian organik segar. Kami membuka kesempatan untuk menjadi mitra outlet Plagro.id untuk menjual produk berkualitas kami.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi optio officiis nulla vitae suscipit incidunt beatae fugit mollitia non natus.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita minus, labore nostrum fuga incidunt quidem placeat unde delectus praesentium aperiam! Repudiandae suscipit porro voluptate autem error cupiditate eveniet amet officia!</p>
         </div>
       </div>
@@ -181,7 +170,7 @@
 
   <section id="form">
     <div class="container">
-      <div class="row text-center mb-3 mt-3 pt-3">
+      <div class="row text-center mb-1 mt-3 pt-3">
         <div class="col">
           <h2>Daftar sekarang dengan mengisi form di bawah ini</h2>
         </div>
@@ -189,7 +178,6 @@
 
       <div class="row justify-content-center">
         <main class="mt-4 mb-4 p-4 shadow col-lg-8">
-          <legend class="text-center">Silahkan melengkapi data diri dan profil lokasi ritel Anda</legend>
           <div class="col-lg-12">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               <h3 class="text-muted">Data Diri</h3>

@@ -69,7 +69,6 @@
           <tr>
             <th scope="col">No</th>
             <th scope="col">Nama</th>
-            <th scope="col">No.HP</th>
             <th scope="col">Lokasi Retail</th>
             <th scope="col">Aksi</th>
           </tr>
@@ -78,8 +77,7 @@
           @foreach($retailers as $retailer)
           <tr>
             <td>{{ $loop->iteration }}</td>
-            <td>{{ $retailer->user->name }}</td>
-            <td>{{ $retailer->phone }}</td>
+            <td>{{ $retailer->name }}</td>
             <td>{{ $retailer->location }}</td>
             <td><a class="badge bg-info" href=""><span data-feather="eye"></span></a></td>
           </tr>

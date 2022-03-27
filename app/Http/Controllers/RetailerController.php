@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\NotofikasiPendaftaran;
+use App\Mail\NotifikasiPendaftaran;
 use App\Models\Criteria;
 use App\Models\Calculation;
 use App\Models\Profile;
@@ -75,7 +75,10 @@ class RetailerController extends Controller
             }
         }
 
-        Mail::to($retailer->email)->send(new NotofikasiPendaftaran());
+
+
+
+        Mail::to($retailer->email)->send(new NotifikasiPendaftaran());
         return redirect('/')->with('success', 'Pendaftaran berhasil dilakukan. silahkan cek email anda.');
     }
 
