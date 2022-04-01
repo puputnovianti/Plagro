@@ -21,4 +21,9 @@ class Retailer extends Authenticatable
     {
         return $this->hasMany(RetailerProfile::class);
     }
+
+    public function retailerDetails()
+    {
+        return $this->hasMany(RetailerDetail::class);
+    }
 }

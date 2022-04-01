@@ -3,7 +3,17 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
 
-    <div class="table-responsive shadow p-3">
+    @foreach($gap as $g)
+    <p>{{$g}}</p>
+    @endforeach
+    <br>
+    @foreach($bobot as $b)
+    <p>{{$b}}</p>
+    @endforeach
+
+    {{$$total}}
+
+    <!-- <div class="table-responsive shadow p-3">
         <table class="table table-sm">
             <thead>
                 <tr>
@@ -26,6 +36,6 @@
                 @endforeach
             </tbody>
         </table>
-    </div>
+    </div> -->
 </main>
 @endsection

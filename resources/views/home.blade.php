@@ -114,8 +114,8 @@
   <section id="about">
     <div class="container">
       <div class="row align-items-center p-4">
-        <div class="col-md-5">
-          <iframe src="https://www.youtube.com/embed/xfmkF9tyE6U" frameborder="1" allowfullscreen min-width="450" min-height="350"></iframe>
+        <div class="col-md-5" style="height: 240px;">
+          <iframe src="https://www.youtube.com/embed/xfmkF9tyE6U" frameborder="0" allowfullscreen width="100%" height="100%"></iframe>
         </div>
         <div class="col-md-6">
           <h1 class="display-5 fw-bold">Penuhi Kebutuhan Anda Bersama Kami</h1>
@@ -177,7 +177,7 @@
       </div>
 
       <div class="row justify-content-center">
-        <main class="mt-4 mb-4 p-4 shadow col-lg-8">
+        <main class="mt-4 mb-4 p-4 shadow col-lg-8 container-narrow">
           <div class="col-lg-12">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               <h3 class="text-muted">Data Diri</h3>
@@ -205,15 +205,22 @@
 
               @foreach($criterias as $criteria)
               <div class="mb-3 mt-3">
-                <input type="hidden" value="{{ $criteria->id }}" name="criteria_id[]">
+                <input type="hidden" value="{{ $criteria->name }}" name="criteria_name[]">
                 <label class="form-label col-form-label">{{$criteria->name}}</label>
-                <select class="form-select" name="profile_id[]" aria-label="Default select example">
+                <select class="form-select" name="retailer_profile_name[]" aria-label="Default select example">
                   @foreach($criteria->profiles as $profile)
-                  <option value="{{ $profile->id }}">{{ $profile->name }}</option>
+                  <option value="{{ $profile->name }}">{{ $profile->name }}</option>
                   @endforeach
                 </select>
               </div>
               @endforeach
+
+
+
+              <!-- @foreach($ideal_profiles as $ip)
+              <input value="{{ $ip->profile->name }}" name="ideal_profile_name[]" type="hidden">
+              <input value="{{ $ip->profile->score }}" name="ideal_profile_score[]" type="hidden">
+              @endforeach -->
 
 
               <button type="submit" class="btn btn-success rounded-pill mt-2 ">Daftar</button>

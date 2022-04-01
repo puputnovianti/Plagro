@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Mail\NotifikasiPendaftaran;
 use App\Models\Criteria;
 use App\Models\Calculation;
+use App\Models\IdealProfile;
 use App\Models\Profile;
 use App\Models\Retailer;
+use App\Models\RetailerDetail;
 use App\Models\RetailerProfile;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -30,6 +32,7 @@ class RetailerController extends Controller
             [
                 'criterias' => Criteria::with(['profiles'])->get(),
                 'profiles' => Profile::all(),
+                'ideal_profiles' => IdealProfile::all()
             ]
         );
     }
@@ -44,7 +47,6 @@ class RetailerController extends Controller
         return view('retailer.create', [
             'criterias' => Criteria::with(['profiles'])->get(),
             'profiles' => Profile::all(),
-
         ]);
     }
 
@@ -63,15 +65,20 @@ class RetailerController extends Controller
         $retailer->location = $data['location'];
         $retailer->save();
 
-        if (is_countable($data['profile_id']) && count($data['profile_id']) > 0) {
-            foreach ($data['profile_id'] as $item => $value) {
+
+
+        if (is_countable($data['retailer_profile_name']) && count($data['retailer_profile_name']) > 0) {
+            foreach ($data['retailer_profile_name'] as $item => $value) {
                 $data2 = array(
                     'retailer_id' => $retailer->id,
-                    'criteria_id' => $data['criteria_id'][$item],
-                    'profile_id' => $data['profile_id'][$item],
+                    'criteria_name' => $data['criteria_name'][$item],
+                    'retailer_profile_name' => $data['retailer_profile_name'][$item],
+                    // 'retailer_profile_score' => 
+                    // 'ideal_profile_name' => $data['ideal_profile_name'][$item],
+                    // 'ideal_profile_score' => $data['ideal_profile_score'][$item],
 
                 );
-                RetailerProfile::create($data2);
+                RetailerDetail::create($data2);
             }
         }
 
