@@ -66,16 +66,15 @@ class RetailerController extends Controller
         $retailer->save();
 
 
-
         if (is_countable($data['retailer_profile_name']) && count($data['retailer_profile_name']) > 0) {
             foreach ($data['retailer_profile_name'] as $item => $value) {
                 $data2 = array(
                     'retailer_id' => $retailer->id,
                     'criteria_name' => $data['criteria_name'][$item],
                     'retailer_profile_name' => $data['retailer_profile_name'][$item],
-                    // 'retailer_profile_score' => 
-                    // 'ideal_profile_name' => $data['ideal_profile_name'][$item],
-                    // 'ideal_profile_score' => $data['ideal_profile_score'][$item],
+                    'retailer_profile_score' => Profile::where('name', $data['retailer_profile_name'][$item])->first()->score,
+                    'ideal_profile_name' => $data['ideal_profile_name'][$item],
+                    'ideal_profile_score' => $data['ideal_profile_score'][$item],
 
                 );
                 RetailerDetail::create($data2);
@@ -83,10 +82,8 @@ class RetailerController extends Controller
         }
 
 
-
-
         Mail::to($retailer->email)->send(new NotifikasiPendaftaran());
-        return redirect('/')->with('success', 'Pendaftaran berhasil dilakukan. silahkan cek email anda.');
+        return redirect('/')->with('success', 'Pendaftaran berhasil dilakukan. Silahkan cek email anda.');
     }
 
     /**

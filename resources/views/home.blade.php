@@ -217,10 +217,10 @@
 
 
 
-              <!-- @foreach($ideal_profiles as $ip)
+              @foreach($ideal_profiles as $ip)
               <input value="{{ $ip->profile->name }}" name="ideal_profile_name[]" type="hidden">
               <input value="{{ $ip->profile->score }}" name="ideal_profile_score[]" type="hidden">
-              @endforeach -->
+              @endforeach
 
 
               <button type="submit" class="btn btn-success rounded-pill mt-2 ">Daftar</button>

@@ -19,9 +19,9 @@ class CreateRetailerDetailsTable extends Migration
             $table->foreign('retailer_id')->references('id')->on('retailers')->onDelete('cascade');
             $table->string('criteria_name');
             $table->string('ideal_profile_name');
-            $table->string('ideal_profile_score');
+            $table->integer('ideal_profile_score');
             $table->string('retailer_profile_name');
-            $table->string('retailer_profile_score');
+            $table->integer('retailer_profile_score');
             $table->timestamps();
         });
     }

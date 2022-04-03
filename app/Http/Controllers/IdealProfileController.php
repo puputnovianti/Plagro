@@ -32,6 +32,7 @@ class IdealProfileController extends Controller
         $criteria = Criteria::find($id);
         return view('dashboard.ideal_profile.create', [
             'profiles' => $criteria->profiles,
+            'factor_id' => $criteria->factor_id,
             'criteria_id' => $criteria->id,
             'criteria_name' => $criteria->name,
         ]);
@@ -40,6 +41,7 @@ class IdealProfileController extends Controller
     public function store(Request $request)
     {
         IdealProfile::create([
+            'factor_id' => $request->factor_id,
             'criteria_id' => $request->criteria_id,
             'profile_id' => $request->profile_id
         ]);

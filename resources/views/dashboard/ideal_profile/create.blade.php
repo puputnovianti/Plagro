@@ -9,6 +9,7 @@
     <div class="mb-2">
       <form action="/dashboard/ideal_profile/create" method="post">
         @csrf
+        <input name="factor_id" type="hidden" class="form-control" value="{{ $factor_id }}">
         <input name="criteria_id" type="hidden" class="form-control" value="{{ $criteria_id }}">
         <label for="profile_id">Profil Ideal</label>
         <select class="form-select" name="profile_id" aria-label="Default select example">
