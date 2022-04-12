@@ -17,11 +17,13 @@ class CreateRetailerDetailsTable extends Migration
             $table->increments('id');
             $table->integer('retailer_id')->unsigned();
             $table->foreign('retailer_id')->references('id')->on('retailers')->onDelete('cascade');
+            $table->integer('factor_id');
             $table->string('criteria_name');
             $table->string('ideal_profile_name');
             $table->integer('ideal_profile_score');
             $table->string('retailer_profile_name');
             $table->integer('retailer_profile_score');
+            $table->integer('gap');
             $table->timestamps();
         });
     }

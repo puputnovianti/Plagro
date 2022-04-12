@@ -70,20 +70,129 @@ class RetailerController extends Controller
             foreach ($data['retailer_profile_name'] as $item => $value) {
                 $data2 = array(
                     'retailer_id' => $retailer->id,
+                    'factor_id' => Criteria::where('name', $data['criteria_name'][$item])->first()->factor_id,
                     'criteria_name' => $data['criteria_name'][$item],
                     'retailer_profile_name' => $data['retailer_profile_name'][$item],
                     'retailer_profile_score' => Profile::where('name', $data['retailer_profile_name'][$item])->first()->score,
                     'ideal_profile_name' => $data['ideal_profile_name'][$item],
                     'ideal_profile_score' => $data['ideal_profile_score'][$item],
+                    'gap' => $data['ideal_profile_score'][$item] - Profile::where('name', $data['retailer_profile_name'][$item])->first()->score,
+
 
                 );
                 RetailerDetail::create($data2);
             }
         }
 
+        //core factors
+        $jumlahcf = count(RetailerDetail::where('retailer_id', $retailer->id)->where('factor_id', 1)->get('gap'));
+        $cf = RetailerDetail::where('retailer_id', $retailer->id)->where('factor_id', 1)->get();
 
-        Mail::to($retailer->email)->send(new NotifikasiPendaftaran());
-        return redirect('/')->with('success', 'Pendaftaran berhasil dilakukan. Silahkan cek email anda.');
+        $bobotcf = array();
+
+        for ($i = 0; $i < $jumlahcf; $i++) {
+            $corefactor[$i] = $cf[$i]->gap;
+            if ($corefactor[$i] == 0) {
+                $bobotcf[$i] = 9;
+            } elseif ($corefactor[$i] == 1) {
+                $bobotcf[$i] = 8;
+            } elseif ($corefactor[$i] == -1) {
+                $bobotcf[$i] = 7;
+            } elseif ($corefactor[$i] == 2) {
+                $bobotcf[$i] = 6;
+            } elseif ($corefactor[$i] == -2) {
+                $bobotcf[$i] = 5;
+            } elseif ($corefactor[$i] == 3) {
+                $bobotcf[$i] = 4;
+            } elseif ($corefactor[$i] == -3) {
+                $bobotcf[$i] = 2;
+            } elseif ($corefactor[$i] == 4) {
+                $bobotcf[$i] = 1;
+            } else {
+                $bobotcf == 0;
+            }
+        }
+
+        $totalcf = array_sum($bobotcf) / $jumlahcf; //rata-rata core factor
+
+        //secondary factor
+        $jumlahsf = count(RetailerDetail::where('retailer_id', $retailer->id)->where('factor_id', 2)->get('gap'));
+        $sf = RetailerDetail::where('retailer_id', $retailer->id)->where('factor_id', 2)->get();
+
+        $bobotsf = array();
+        for ($i = 0; $i < $jumlahsf; $i++) {
+            $corefactor[$i] = $sf[$i]->gap;
+            if ($corefactor[$i] == 0) {
+                $bobotsf[$i] = 9;
+            } elseif ($corefactor[$i] == 1) {
+                $bobotsf[$i] = 8;
+            } elseif ($corefactor[$i] == -1) {
+                $bobotsf[$i] = 7;
+            } elseif ($corefactor[$i] == 2) {
+                $bobotsf[$i] = 6;
+            } elseif ($corefactor[$i] == -2) {
+                $bobotsf[$i] = 5;
+            } elseif ($corefactor[$i] == 3) {
+                $bobotsf[$i] = 4;
+            } elseif ($corefactor[$i] == -3) {
+                $bobotsf[$i] = 2;
+            } elseif ($corefactor[$i] == 4) {
+                $bobotsf[$i] = 1;
+            } else {
+                $bobotsf == 0;
+            }
+        }
+
+        $totalsf = array_sum($bobotsf) / $jumlahsf; //rata-rata secondary factor
+
+        //total nilai
+        $total = ($totalcf * 0.6) + ($totalsf * 0.4);
+
+        return $total;
+
+
+
+
+
+        // $bobot = array();
+        // if (is_countable($data['retailer_profile_name']) && count($data['retailer_profile_name']) > 0) {
+        //     foreach ($data['retailer_profile_name'] as $item => $value) {
+        //         $gap = array(
+        //             $data['ideal_profile_score'][$item] - Profile::where('name', $data['retailer_profile_name'][$item])->first()->score
+        //         );
+        //         if ($gap[$item] == 0) {
+        //             $bobot[$item] = 9;
+        //         } elseif ($gap[$item] == 1) {
+        //             $bobot[$item] = 8;
+        //         } elseif ($gap[$item] == -1) {
+        //             $bobot[$item] = 7;
+        //         } elseif ($gap[$item] == 2) {
+        //             $bobot[$item] = 6;
+        //         } elseif ($gap[$item] == -2) {
+        //             $bobot[$item] = 5;
+        //         } elseif ($gap[$item] == 3) {
+        //             $bobot[$item] = 4;
+        //         } elseif ($gap[$item] == -3) {
+        //             $bobot[$item] = 2;
+        //         } elseif ($gap[$item] == 4) {
+        //             $bobot[$item] = 1;
+        //         } else {
+        //             $bobot[$item] == 0;
+        //         }
+        //     }
+        // }
+
+
+
+
+
+        // return $cf;
+
+
+
+
+        // Mail::to($retailer->email)->send(new NotifikasiPendaftaran());
+        // return redirect('/')->with('success', 'Pendaftaran berhasil dilakukan. Silahkan cek email anda.');
     }
 
     /**
