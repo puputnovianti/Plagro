@@ -148,51 +148,20 @@ class RetailerController extends Controller
         //total nilai
         $total = ($totalcf * 0.6) + ($totalsf * 0.4);
 
-        return $total;
+        $calculation = new Calculation;
+        $calculation->retailer_id = $retailer->id;
+        $calculation->cfactor = $totalcf;
+        $calculation->sfactor = $totalsf;
+        $calculation->total_score = $total;
+        $calculation->save();
 
 
 
 
 
-        // $bobot = array();
-        // if (is_countable($data['retailer_profile_name']) && count($data['retailer_profile_name']) > 0) {
-        //     foreach ($data['retailer_profile_name'] as $item => $value) {
-        //         $gap = array(
-        //             $data['ideal_profile_score'][$item] - Profile::where('name', $data['retailer_profile_name'][$item])->first()->score
-        //         );
-        //         if ($gap[$item] == 0) {
-        //             $bobot[$item] = 9;
-        //         } elseif ($gap[$item] == 1) {
-        //             $bobot[$item] = 8;
-        //         } elseif ($gap[$item] == -1) {
-        //             $bobot[$item] = 7;
-        //         } elseif ($gap[$item] == 2) {
-        //             $bobot[$item] = 6;
-        //         } elseif ($gap[$item] == -2) {
-        //             $bobot[$item] = 5;
-        //         } elseif ($gap[$item] == 3) {
-        //             $bobot[$item] = 4;
-        //         } elseif ($gap[$item] == -3) {
-        //             $bobot[$item] = 2;
-        //         } elseif ($gap[$item] == 4) {
-        //             $bobot[$item] = 1;
-        //         } else {
-        //             $bobot[$item] == 0;
-        //         }
-        //     }
-        // }
 
-
-
-
-
-        // return $cf;
-
-
-
-
-        // Mail::to($retailer->email)->send(new NotifikasiPendaftaran());
-        // return redirect('/')->with('success', 'Pendaftaran berhasil dilakukan. Silahkan cek email anda.');
+        Mail::to($retailer->email)->send(new NotifikasiPendaftaran());
+        return redirect('/')->with('success', 'Pendaftaran berhasil dilakukan. Silahkan cek email anda.');
     }
 
     /**

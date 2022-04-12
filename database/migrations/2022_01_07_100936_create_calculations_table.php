@@ -17,9 +17,9 @@ class CreateCalculationsTable extends Migration
             $table->increments('id');
             $table->integer('retailer_id')->unsigned();
             $table->foreign('retailer_id')->references('id')->on('retailers')->onDelete('cascade');
-            $table->integer('cfactor');
-            $table->integer('sfactor');
-            $table->integer('total_score');
+            $table->float('cfactor');
+            $table->float('sfactor');
+            $table->float('total_score');
             $table->timestamps();
         });
     }
