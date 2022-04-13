@@ -26,4 +26,9 @@ class Retailer extends Authenticatable
     {
         return $this->hasMany(RetailerDetail::class);
     }
+
+    public function calculation()
+    {
+        return $this->hasOne(Calculation::class);
+    }
 }

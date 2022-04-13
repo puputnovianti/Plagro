@@ -13,14 +13,14 @@
   </div>
   @endif
 
-  <div class="table-responsive shadow p-3">
-    <table class="table table-sm">
+  <div class="table-responsive shadow-sm p-2">
+    <table class="table table-borderless">
       <thead>
         <tr>
           <th scope="col">No</th>
           <th scope="col">Nama Kriteria</th>
           <th scope="col">Faktor</th>
-          <th scope="col">Aksi</th>
+          <th scope="col" style="text-align: center;">Aksi</th>
         </tr>
       </thead>
       <tbody>
@@ -29,7 +29,7 @@
           <td>{{ $loop->iteration }}</td>
           <td>{{ $criteria->name }}</td>
           <td>{{ $criteria->factor->name }}</td>
-          <td>
+          <td style="text-align: center;">
             <a class="badge bg-info" href="/dashboard/criterias/{{$criteria->id}}"><span data-feather="eye"></span></a>
             <a class="badge bg-warning" href="/dashboard/criterias/{{ $criteria->id }}/edit"><span data-feather="edit"></span></a>
             <form action="/dashboard/criterias/{{ $criteria->id }}" method="POST" class="d-inline">

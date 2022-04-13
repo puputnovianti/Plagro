@@ -6,14 +6,14 @@
     </div>
     {{-- <a class="btn btn-primary mb-3" href="/dashboard/profiles/create">Tambah Profil</a> --}}
     <div class="table-responsive shadow p-3">
-        <table class="table table-sm">
+        <table class="table table-sm table-borderless">
             <thead>
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">Nama Profile</th>
                     <th scope="col">Nama Kriteria</th>
-                    <th scope="col">Nilai</th>
-                    <th scope="col">Aksi</th>
+                    <th scope="col" style="text-align: center;">Nilai</th>
+                    <th scope="col" style="text-align: center;">Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,8 +22,8 @@
                     <td>{{ $loop->iteration}}</td>
                     <td>{{ $profile->name }}</td>
                     <td>{{ $profile->criteria->name}}</td>
-                    <td>{{ $profile->score }}</td>
-                    <td>
+                    <td style="text-align: center;">{{ $profile->score }}</td>
+                    <td style="text-align: center;">
                         <a class="badge bg-warning" href="/dashboard/profiles/{{$profile->id}}/edit"><span data-feather="edit"></span></a>
                         <form action="/dashboard/profiles/{{ $profile->id }}" method="POST" class="d-inline">
                             @method('delete')

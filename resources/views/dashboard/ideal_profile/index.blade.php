@@ -6,14 +6,14 @@
   </div>
 
   <div class="table-responsive shadow p-3">
-    <table class="table table-sm">
+    <table class="table table-borderless">
       <thead>
         <tr>
           <th scope="col">No</th>
           <th scope="col">Kriteria</th>
           <th scope="col">Nama Profil</th>
-          <th scope="col">Nilai</th>
-          <th scope="col">Aksi</th>
+          <th scope="col" style="text-align: center;">Nilai</th>
+          <th scope="col" style="text-align: center;">Aksi</th>
         </tr>
       </thead>
       <tbody>
@@ -22,8 +22,8 @@
           <td>{{ $loop->iteration}}</td>
           <td>{{ $ideal_profile->profile->criteria->name}}</td>
           <td>{{ $ideal_profile->profile->name }}</td>
-          <td>{{ $ideal_profile->profile->score }}</td>
-          <td><a class="badge bg-warning" href="/dashboard/ideal_profile/{{$ideal_profile->profile->criteria->id}}/edit"><span data-feather="edit"></span></a></td>
+          <td style="text-align: center;">{{ $ideal_profile->profile->score }}</td>
+          <td style="text-align: center;"><a class="badge bg-warning" href="/dashboard/ideal_profile/{{$ideal_profile->profile->criteria->id}}/edit"><span data-feather="edit"></span></a></td>
         </tr>
         @endforeach
       </tbody>

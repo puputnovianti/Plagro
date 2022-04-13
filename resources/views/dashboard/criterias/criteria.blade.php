@@ -32,14 +32,14 @@
 
 
 
-    <div class="shadow p-3 col-md-6">
-      <table class="table table-sm">
+    <div class="shadow p-2 col-md-6">
+      <table class="table table-borderless">
         <thead>
           <tr>
             <th scope="col">No</th>
             <th scope="col">Profil</th>
-            <th scope="col">Nilai</th>
-            <th scope="col">Aksi</th>
+            <th scope="col" style="text-align: center;">Nilai</th>
+            <th scope="col" style="text-align: center;">Aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -47,8 +47,8 @@
           <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $profile->name }}</td>
-            <td>{{ $profile->score }}</td>
-            <td>
+            <td style="text-align: center;">{{ $profile->score }}</td>
+            <td style="text-align: center;">
               <a class="badge bg-warning m-1" href="/dashboard/profiles/{{$profile->id}}/edit"><span data-feather="edit"></span></a>
               <form action="/dashboard/profiles/{{ $profile->id }}" method="POST" class="d-inline">
                 @method('delete')

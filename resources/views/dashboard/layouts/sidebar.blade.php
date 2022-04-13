@@ -26,12 +26,6 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span data-feather="users"></span>
-          Calon Retailer
-        </a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link {{ Request::is('dashboard/calculation*') ? 'active' : '' }}" href="/dashboard/calculation">
           <span data-feather="bar-chart-2"></span>
           Hasil Perhitungan

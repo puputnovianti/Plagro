@@ -2,25 +2,18 @@
 @section('content')
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
-
-    @foreach($gap as $g)
-    <p>{{$g}}</p>
-    @endforeach
-    <br>
-    @foreach($bobot as $b)
-    <p>{{$b}}</p>
-    @endforeach
-
-    {{$$total}}
-
-    <!-- <div class="table-responsive shadow p-3">
-        <table class="table table-sm">
+    <h2 class="my-3">Hasil Perhitungan Profile Matching</h2>
+    <hr>
+    <div class="table-responsive shadow-sm p-2">
+        <table class="table table-sm table-borderless">
             <thead>
                 <tr>
                     <th scope="col">No</th>
-                    <th scope="col">Nama Retailer</th>
+                    <th scope="col">Nama</th>
                     <th scope="col">Lokasi Retel</th>
-                    <th scope="col">Aksi</th>
+                    <th scope="col" style="text-align: center;">Tanggal Pendaftaran</th>
+                    <th scope="col" style="text-align: center;">Total Score</th>
+                    <th scope="col" style="text-align: center;">Detail</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,13 +22,17 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $retailer->name }}</td>
                     <td>{{$retailer->location}}</td>
-                    <td>
+                    <td style="text-align: center;">{{$retailer->created_at->format('d-m-Y')}}</td>
+                    <td style="text-align: center;">{{$retailer->calculation->total_score}}</td>
+                    <td style="text-align: center;">
                         <a class="badge bg-info" href="/dashboard/calculation/{{$retailer->id}}"><span data-feather="eye"></span></a>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
-    </div> -->
+    </div>
 </main>
+
+
 @endsection

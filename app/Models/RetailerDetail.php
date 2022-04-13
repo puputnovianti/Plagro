@@ -9,4 +9,9 @@ class RetailerDetail extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function retailer()
+    {
+        return $this->belongsTo(Retailer::class);
+    }
 }
