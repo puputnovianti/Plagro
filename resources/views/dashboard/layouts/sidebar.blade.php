@@ -15,13 +15,13 @@
       </li>
       <li class="nav-item">
         <a class="nav-link {{ Request::is('dashboard/profiles*') ? 'active' : '' }}" href="/dashboard/profiles">
-          <span data-feather="folder"></span>
+          <span data-feather="file-text"></span>
           Profil
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link {{ Request::is('dashboard/ideal_profile*') ? 'active' : '' }}" href="/dashboard/ideal_profile">
-          <span data-feather="folder"></span>
+          <span data-feather="check-circle"></span>
           Profil Ideal
         </a>
       </li>
