@@ -84,7 +84,7 @@ class CriteriaController extends Controller
             'name' => $request->name,
             'factor_id' => $request->factor_id,
         ]);
-        return redirect('dashboard/criterias');
+        return redirect('dashboard/criterias')->with('edit', 'Data berhasil diubah.');
     }
 
     public function destroy($id)

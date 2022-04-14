@@ -5,6 +5,25 @@
         <h1 class="h2">Profil</h1>
     </div>
     {{-- <a class="btn btn-primary mb-3" href="/dashboard/profiles/create">Tambah Profil</a> --}}
+
+    @if(session()->has('edit'))
+    <div class="container">
+        <div class="alert alert-warning alert-dismissible fade show mt-3 col-lg-8" role="alert">
+            {{ session('edit') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    @endif
+
+    @if(session()->has('delete'))
+    <div class="container">
+        <div class="alert alert-danger alert-dismissible fade show mt-3 col-lg-8" role="alert">
+            {{ session('delete') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    @endif
+
     <div class="table-responsive shadow p-3">
         <table class="table table-sm table-borderless">
             <thead>

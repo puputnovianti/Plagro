@@ -13,6 +13,15 @@
   </div>
   @endif
 
+  @if(session()->has('edit'))
+  <div class="container">
+    <div class="alert alert-warning alert-dismissible fade show mt-3 col-lg-8" role="alert">
+      {{ session('edit') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+  @endif
+
   <div class="table-responsive shadow-sm p-2">
     <table class="table table-borderless">
       <thead>

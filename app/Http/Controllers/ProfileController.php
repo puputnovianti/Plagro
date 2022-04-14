@@ -64,12 +64,12 @@ class ProfileController extends Controller
             'score' => $request->score,
             'criteria_id' => $request->criteria_id,
         ]);
-        return redirect('dashboard/profiles');
+        return redirect('dashboard/profiles')->with('edit', 'Data berhasil diubah.');
     }
 
     public function destroy($id)
     {
         Profile::find($id)->delete();
-        return back();
+        return back()->with('delete', 'Data berhasil dihapus.');
     }
 }
