@@ -14,11 +14,9 @@ class CalculationController extends Controller
 {
     public function index()
     {
-        return view('dashboard.calculation.index', [
-            'calculations' => Calculation::all(),
-            'retailers' => Retailer::all(),
-            'retailer_details' => RetailerDetail::all()
-        ]);
+        $retailers = Retailer::sortable()->paginate(10);
+
+        return view('dashboard.calculation.index', compact('retailers'));
     }
 
     public function show($id)
@@ -34,5 +32,10 @@ class CalculationController extends Controller
 
             ]
         );
+    }
+
+    public function create()
+    {
+        return view('dashboard.calculation.create');
     }
 }

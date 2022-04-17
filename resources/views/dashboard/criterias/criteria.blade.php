@@ -60,7 +60,7 @@
           @endforeach
         </tbody>
       </table>
-      <a class="btn btn-warning my-1 rounded-pill" href="/dashboard/ideal_profile/{{ $criteria_id }}">Atur Profil Ideal</a>
+      <a class="btn btn-warning my-1 rounded-pill" href="/dashboard/ideal_profile/{{ $criteria_id }}">Pilih Profil Ideal</a>
     </div>
   </div>
   @endisset

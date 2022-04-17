@@ -121,7 +121,10 @@ body {
   color: #ffffff;
 }
 
-
+th a {
+  text-decoration: none;
+  color: #fff;
+}
 
 .table tr:nth-child(even) {
   background-color: #ddf1e7;

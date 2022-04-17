@@ -62,29 +62,37 @@
   </div>
 
   <div class="shadow p-3">
-    <h2>Calon Retailer</h2>
-    <div class="table-responsive">
-      <table class="table table-sm table-borderless">
-        <thead>
-          <tr>
-            <th scope="col">No</th>
-            <th scope="col">Nama</th>
-            <th scope="col">Lokasi Retail</th>
-            <th scope="col">Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach($retailers as $retailer)
-          <tr>
-            <td>{{ $loop->iteration }}</td>
-            <td>{{ $retailer->name }}</td>
-            <td>{{ $retailer->location }}</td>
-            <td><a class="badge bg-info" href=""><span data-feather="eye"></span></a></td>
-          </tr>
-          @endforeach
-        </tbody>
-      </table>
-    </div>
+    <div id="grafik"></div>
   </div>
 </main>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript">
+  var retailer = <?php echo json_encode($jmlretailer) ?>;
+  var bulan = <?php echo json_encode($bulan) ?>;
+  Highcharts.chart('grafik', {
+    title: {
+      text: 'Garfik Jumlah Pendaftaran Calon Retailer'
+    },
+    xAxis: {
+      categories: bulan
+    },
+    yAxis: {
+      title: {
+        text: 'Jumlan Pendaftar'
+      }
+    },
+    plotOptions: {
+      series: {
+        allowPointSelect: true
+      }
+    },
+    series: [{
+        name: 'Jumlah Pendaftar',
+        data: retailer
+      }
+
+    ]
+  });
+</script>
 @endsection

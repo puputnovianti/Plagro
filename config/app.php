@@ -180,6 +180,7 @@ return [
         */
         Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
 
+
     ],
 
     /*

@@ -1,18 +1,20 @@
 @extends('dashboard.layouts.main')
 @section('content')
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
-    <h2 class="my-3">Hasil Perhitungan Profile Matching</h2>
-    <hr>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Hasil Perhitungan Profile Matching</h1>
+        <a class="btn btn-success rounded-pill ms-auto" href="/dashboard/calculation/create">Tambah Data</a>
+    </div>
     <div class="table-responsive shadow-sm p-2">
-        <table class="table table-sm table-borderless">
+        <table class="table table-borderless">
             <thead>
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Lokasi Retel</th>
-                    <th scope="col" style="text-align: center;">Tanggal Pendaftaran</th>
-                    <th scope="col" style="text-align: center;">Total Score</th>
+                    <th scope="col" style="text-align: center;">@sortablelink('created_at', 'Tanggal Registrasi')</th>
+                    <th scope="col" style="text-align: center;">@sortablelink('calculation.total_score', 'Score')</th>
                     <th scope="col" style="text-align: center;">Detail</th>
                 </tr>
             </thead>
@@ -31,6 +33,7 @@
                 @endforeach
             </tbody>
         </table>
+        {!! $retailers->appends(\Request::except('page'))->render() !!}
     </div>
 </main>
 

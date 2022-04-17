@@ -6,7 +6,7 @@
     <hr>
 
     <div class="table-responsive shadow p-3">
-        <table class="">
+        <table cellpadding="5" cellspacing="0">
             <tr>
                 <th scope="col">Tanggal Pendaftaran</th>
                 <td> : </td>
@@ -46,38 +46,23 @@
     </div>
 
     <div class="table-responsive shadow p-3 mt-3">
-        <table>
+        <table class="table table-borderless">
             <tr>
                 <th scope="col">No</th>
                 <th scope="col">Nama Kriteria</th>
                 <th scope="col">Profil Retailer</th>
-                <th scope="col">Nilai Profil</th>
+                <th scope="col" style="text-align: center;">Nilai Profil</th>
+                <th scope="col">Profil Ideal</th>
+                <th scope="col" style="text-align: center;">Nilai Profil Ideal</th>
             </tr>
             @foreach($details as $detail)
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $detail->criteria_name }}</td>
                 <td>{{ $detail->retailer_profile_name }}</td>
-                <td>{{ $detail->retailer_profile_score }}</td>
-            </tr>
-            @endforeach
-        </table>
-    </div>
-
-    <div class="table-responsive shadow p-3 mt-3">
-        <table>
-            <tr>
-                <th scope="col">No</th>
-                <th scope="col">Nama Kriteria</th>
-                <th scope="col">Profil Ideal</th>
-                <th scope="col">Nilai Profil</th>
-            </tr>
-            @foreach($details as $detail)
-            <tr>
-                <td>{{ $loop->iteration}}</td>
-                <td>{{ $detail->criteria_name}}</td>
-                <td>{{ $detail->ideal_profile_name}}</td>
-                <td>{{ $detail->ideal_profile_score}}</td>
+                <td style="text-align: center;">{{ $detail->retailer_profile_score }}</td>
+                <td>{{ $detail->ideal_profile_name }}</td>
+                <td style="text-align: center;">{{ $detail->ideal_profile_score }}</td>
             </tr>
             @endforeach
         </table>

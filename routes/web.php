@@ -13,9 +13,7 @@ use App\Http\Controllers\RetailerController;
 use App\Http\Controllers\RetailerProfileController;
 use App\Mail\SendMail;
 use App\Mail\SendMailMarkdown;
-use App\Models\Calculation;
 use App\Models\IdealProfile;
-use App\Models\RetailerProfile;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -96,3 +94,4 @@ Route::get('dashboard/ideal_profile', [IdealProfileController::class, 'index'])-
 
 Route::get('dashboard/calculation', [CalculationController::class, 'index'])->middleware('admin');
 Route::get('dashboard/calculation/{id}', [CalculationController::class, 'show'])->middleware('admin');
+Route::get('dashboard/calculation/create', [CalculationController::class, 'create'])->middleware('admin');

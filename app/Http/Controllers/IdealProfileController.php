@@ -18,15 +18,6 @@ class IdealProfileController extends Controller
         ]);
     }
 
-    // public function storeidealprofile(Request $request)
-    // {
-    //     $ideal = IdealProfile::create([
-    //         'criteria_id' => $request->criteria_id,
-    //         'profile_id' => $request->ideal_profile,
-    //     ]);
-    //     dd($ideal);
-    // }
-
     public function show($id)
     {
         $criteria = Criteria::find($id);

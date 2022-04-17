@@ -10,7 +10,7 @@ use Kyslik\ColumnSortable\Sortable;
 class Calculation extends Model
 {
 
-    use HasFactory;
+    use HasFactory, Sortable;
 
 
     protected $guarded = [];
@@ -22,6 +22,9 @@ class Calculation extends Model
 
 
     public $sortable = [
+        'id',
+        'sfactor',
+        'cfactor',
         'total_score',
         'created_at'
     ];

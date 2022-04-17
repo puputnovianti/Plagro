@@ -92,21 +92,15 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Admin',
-            'email' => 'ekapuput44@gmail.com',
+            'email' => 'adminplagro@gmail.com',
             'password' => Hash::make('password'),
             'is_admin' => 1
-        ]);
-        User::create([
-            'name' => 'Puput Novianti',
-            'email' => 'puputnovianti99@gmail.com',
-            'password' => Hash::make('password'),
-            'is_admin' => 0
         ]);
 
         IdealProfile::create([
             'factor_id' => 1,
             'criteria_id' => 1,
-            'profile_id' => 1,
+            'profile_id' => 5,
         ]);
 
         IdealProfile::create([

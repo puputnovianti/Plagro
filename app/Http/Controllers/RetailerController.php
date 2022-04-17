@@ -65,6 +65,8 @@ class RetailerController extends Controller
         $retailer->location = $data['location'];
         $retailer->save();
 
+        $ideal_profile = IdealProfile::get();
+        // dd($ideal_profile);
 
         if (is_countable($data['retailer_profile_name']) && count($data['retailer_profile_name']) > 0) {
             foreach ($data['retailer_profile_name'] as $item => $value) {
@@ -74,11 +76,9 @@ class RetailerController extends Controller
                     'criteria_name' => $data['criteria_name'][$item],
                     'retailer_profile_name' => $data['retailer_profile_name'][$item],
                     'retailer_profile_score' => Profile::where('name', $data['retailer_profile_name'][$item])->first()->score,
-                    'ideal_profile_name' => $data['ideal_profile_name'][$item],
-                    'ideal_profile_score' => $data['ideal_profile_score'][$item],
-                    'gap' => $data['ideal_profile_score'][$item] - Profile::where('name', $data['retailer_profile_name'][$item])->first()->score,
-
-
+                    'ideal_profile_name' => $ideal_profile[$item]->profile()->first()->name,
+                    'ideal_profile_score' => $ideal_profile[$item]->profile()->first()->score,
+                    'gap' => $ideal_profile[$item]->profile()->first()->score - Profile::where('name', $data['retailer_profile_name'][$item])->first()->score,
                 );
                 RetailerDetail::create($data2);
             }
@@ -119,7 +119,7 @@ class RetailerController extends Controller
         $jumlahsf = count(RetailerDetail::where('retailer_id', $retailer->id)->where('factor_id', 2)->get('gap'));
         $sf = RetailerDetail::where('retailer_id', $retailer->id)->where('factor_id', 2)->get();
 
-        $bobotsf = array();
+        $bobotsf = array(); //bobot nilai gap
         for ($i = 0; $i < $jumlahsf; $i++) {
             $corefactor[$i] = $sf[$i]->gap;
             if ($corefactor[$i] == 0) {
@@ -135,8 +135,10 @@ class RetailerController extends Controller
             } elseif ($corefactor[$i] == 3) {
                 $bobotsf[$i] = 4;
             } elseif ($corefactor[$i] == -3) {
-                $bobotsf[$i] = 2;
+                $bobotsf[$i] = 3;
             } elseif ($corefactor[$i] == 4) {
+                $bobotsf[$i] = 2;
+            } elseif ($corefactor[$i] == -4) {
                 $bobotsf[$i] = 1;
             } else {
                 $bobotsf == 0;
@@ -154,10 +156,6 @@ class RetailerController extends Controller
         $calculation->sfactor = $totalsf;
         $calculation->total_score = $total;
         $calculation->save();
-
-
-
-
 
 
         Mail::to($retailer->email)->send(new NotifikasiPendaftaran());

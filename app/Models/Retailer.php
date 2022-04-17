@@ -5,12 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Kyslik\ColumnSortable\Sortable;
 
 class Retailer extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Sortable;
 
     protected $guarded = ['id'];
+
+    public $sortable = [
+        'id',
+        'name',
+        'email',
+        'location',
+        'created_at'
+    ];
 
     public function user()
     {

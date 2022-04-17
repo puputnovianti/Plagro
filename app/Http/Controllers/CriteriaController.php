@@ -7,6 +7,7 @@ use App\Models\Criteria;
 use App\Models\Factor;
 use App\Models\IdealProfile;
 use App\Models\Profile;
+use GuzzleHttp\Handler\Proxy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -47,8 +48,6 @@ class CriteriaController extends Controller
                 'criteria_id' => $criteria->id,
                 'criteria_name' => $criteria->name,
                 'factors' => $criteria->factor,
-
-
             ]
         );
     }

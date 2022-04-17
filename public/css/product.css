@@ -11,22 +11,27 @@
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
 }
+
 .site-header a {
   /* color: #e7e4e4; */
   transition: color .15s ease-in-out;
 }
+
 .site-header a:hover {
   color: #fff;
   text-decoration: none;
 }
-.s{
-  color: #333 ;
+
+.s {
+  color: #333;
 }
 
 
-.f a{
+.f a {
   text-decoration: none;
 }
+
+
 
 /*
  * Dummy devices (replace them with your own or something else entirely!)
@@ -37,20 +42,21 @@
 
 }
 
-.btn{
+.btn {
   width: 90px;
 }
-.r{
+
+.r {
   width: 150px;
 }
 
-#about{
+#about {
   background-color: #a0c9b4;
 }
 
 
-.card-body{
-  background-color: #a0c9b4 ;
+.card-body {
+  background-color: #a0c9b4;
 }
 
 .product-device {
@@ -95,15 +101,15 @@
   .s {
     display: none;
   }
-  iframe{
+
+  iframe {
     height: 75%;
     width: 100%;
   }
-.container-narrow{
-  width: 80%;
-}
+
+  .container-narrow {
+    width: 80%;
+  }
 }
 
-@media screen {
-  
-}
+@media screen {}
