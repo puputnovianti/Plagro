@@ -54,6 +54,7 @@
                 <th scope="col" style="text-align: center;">Nilai Profil</th>
                 <th scope="col">Profil Ideal</th>
                 <th scope="col" style="text-align: center;">Nilai Profil Ideal</th>
+                <th scope="col" style="text-align: center;">Gap</th>
             </tr>
             @foreach($details as $detail)
             <tr>
@@ -63,6 +64,7 @@
                 <td style="text-align: center;">{{ $detail->retailer_profile_score }}</td>
                 <td>{{ $detail->ideal_profile_name }}</td>
                 <td style="text-align: center;">{{ $detail->ideal_profile_score }}</td>
+                <td style="text-align: center;">{{ $detail->gap }}</td>
             </tr>
             @endforeach
         </table>

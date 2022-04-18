@@ -19,12 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
-// Route::get('/markdown', function () {
-//     Mail::to('ekapuput44@gmail.com')->send(new SendMailMarkdown());
-//     return view('home');
-// });
-
 Route::get('dashboard/categories', [CategoryController::class, 'index'])->middleware('admin');
 Route::get('dashboard/categories/create', [CategoryController::class, 'create'])->middleware('admin');
 Route::post('dashboard/categories', [CategoryController::class, 'store'])->middleware('admin');
@@ -93,5 +87,6 @@ Route::put('retailer/retailer_profile/{id}', [RetailerProfileController::class, 
 Route::get('dashboard/ideal_profile', [IdealProfileController::class, 'index'])->middleware('admin');
 
 Route::get('dashboard/calculation', [CalculationController::class, 'index'])->middleware('admin');
-Route::get('dashboard/calculation/{id}', [CalculationController::class, 'show'])->middleware('admin');
 Route::get('dashboard/calculation/create', [CalculationController::class, 'create'])->middleware('admin');
+Route::post('dashboard/calculation', [CalculationController::class, 'store'])->middleware('admin');
+Route::get('dashboard/calculation/{id}', [CalculationController::class, 'show'])->middleware('admin');

@@ -105,8 +105,10 @@ class RetailerController extends Controller
             } elseif ($corefactor[$i] == 3) {
                 $bobotcf[$i] = 4;
             } elseif ($corefactor[$i] == -3) {
-                $bobotcf[$i] = 2;
+                $bobotcf[$i] = 3;
             } elseif ($corefactor[$i] == 4) {
+                $bobotcf[$i] = 2;
+            } elseif ($corefactor[$i] == -4) {
                 $bobotcf[$i] = 1;
             } else {
                 $bobotcf == 0;
@@ -147,8 +149,12 @@ class RetailerController extends Controller
 
         $totalsf = array_sum($bobotsf) / $jumlahsf; //rata-rata secondary factor
 
+        $ratacf = $totalcf * 0.6;
+        $ratasf = $totalsf * 0.4;
+
         //total nilai
-        $total = ($totalcf * 0.6) + ($totalsf * 0.4);
+        $total = $ratacf + $ratasf;
+
 
         $calculation = new Calculation;
         $calculation->retailer_id = $retailer->id;

@@ -7,6 +7,12 @@
         <a class="btn btn-success rounded-pill ms-auto" href="/dashboard/calculation/create">Tambah Data</a>
     </div>
     <div class="table-responsive shadow-sm p-2">
+        @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show mt-3 col-lg-8" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
         <table class="table table-borderless">
             <thead>
                 <tr>
