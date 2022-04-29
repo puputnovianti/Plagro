@@ -9,7 +9,7 @@
   <link href="/css/home.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <title>Plagro.id</title>
 </head>
 
@@ -127,7 +127,7 @@
             </div>
           </div>
           <div class="col-lg-12">
-            <form method="POST" action="/">
+            <form method="POST" action="/" class="retailerForm">
               @csrf
               <div class="mb-3 mt-3">
                 <label for="email" class="form-label">Email</label>
@@ -138,9 +138,19 @@
                 <input name="name" type="text" class="form-control" required>
               </div>
               <div class="mb-3 mt-3">
-                <label for="location" class="form-label">Lokasi Ritel</label>
-                <input name="location" type="text" class="form-control" required>
+                <label for="address" class="form-label">Alamat</label>
+                <input name="address" id="address" type="text" class="form-control" required>
               </div>
+              <div class="mb-3 mt-3">
+                <label for="location" class="form-label">Lokasi Ritel</label>
+                <input id="searchInput" name="location" type="text" class="form-control" required placeholder="Lokasi ritel Anda..">
+                <input name="latitude" type="hidden" class="form-control" value="">
+                <input name="longitude" type="hidden" class="form-control" value="">
+              </div>
+
+              <!-- Google map -->
+              <div id="map"></div>
+
 
               <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h3 class="text-muted">Profil Lokasi</h3>
@@ -155,6 +165,7 @@
                   <option value="{{ $profile->name }}">{{ $profile->name }}</option>
                   @endforeach
                 </select>
+                <input type="file" name="criteria_photo[]" class="mt-2">
               </div>
               @endforeach
               <button type="submit" class="btn btn-success rounded-pill mt-2 ">Daftar</button>
@@ -190,8 +201,47 @@
 
 
 
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlkOctpu1w95v0wRJ2Y2R9KJW28nfTxOM&libraries=places&callback=initMap">
+  </script>
+
+  <script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+          lat: -8.670458199999999,
+          lng: 115.2126293
+        },
+        zoom: 13
+      });
+
+      var input = document.getElementById('searchInput');
+      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
 
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      autocomplete.bindTo('bounds', map);
+
+      var infowindow = new google.maps.InfoWindow();
+      var marker = new google.maps.Marker({
+        map: map,
+        anchorPoint: new google.maps.Point(0, -29)
+      });
+
+      autocomplete.addListener('place_changed', function() {
+        infowindow.close();
+        marker.setVisible(false);
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+          window.alert("Autocomplete's returned place contains no geometry");
+          return;
+        }
+
+        document.querySelector('.retailerForm input[name = "latitude"]').value = place.geometry.location.lat();
+        document.querySelector('.retailerForm input[name = "longitude"]').value = place.geometry.location.lng();
+
+      });
+    }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>

@@ -89,7 +89,7 @@ class CalculationController extends Controller
             }
         }
 
-        $totalcf = array_sum($bobotcf) / $jumlahcf; //rata-rata core factor
+        $ratacf = array_sum($bobotcf) / $jumlahcf; //rata-rata core factor
 
         //secondary factor
         $jumlahsf = count(RetailerDetail::where('retailer_id', $retailer->id)->where('factor_id', 2)->get('gap'));
@@ -121,19 +121,19 @@ class CalculationController extends Controller
             }
         }
 
-        $totalsf = array_sum($bobotsf) / $jumlahsf; //rata-rata secondary factor
+        $ratasf = array_sum($bobotsf) / $jumlahsf; //rata-rata secondary factor
 
-        $ratacf = $totalcf * 0.6;
-        $ratasf = $totalsf * 0.4;
+        $totalcf = $ratacf * 0.6; //total core factor
+        $totalsf = $ratasf * 0.4; //total secondary factor
 
         //total nilai
-        $total = $ratacf + $ratasf;
+        $total = $totalcf + $totalsf;
 
 
         $calculation = new Calculation;
         $calculation->retailer_id = $retailer->id;
-        $calculation->cfactor = $ratacf;
-        $calculation->sfactor = $ratasf;
+        $calculation->cfactor = $totalcf;
+        $calculation->sfactor = $totalsf;
         $calculation->total_score = $total;
         $calculation->save();
 
