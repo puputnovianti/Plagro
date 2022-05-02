@@ -17,7 +17,10 @@ class CreateRetailersTable extends Migration
             $table->increments('id');
             $table->string('email');
             $table->string('name');
+            $table->string('address');
             $table->string('location');
+            $table->string('latitude');
+            $table->string('longitude');
             $table->timestamps();
         });
     }

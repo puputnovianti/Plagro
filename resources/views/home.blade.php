@@ -127,7 +127,7 @@
             </div>
           </div>
           <div class="col-lg-12">
-            <form method="POST" action="/" class="retailerForm">
+            <form method="POST" action="/" class="retailerForm" enctype="multipart/form-data">
               @csrf
               <div class="mb-3 mt-3">
                 <label for="email" class="form-label">Email</label>
@@ -138,7 +138,7 @@
                 <input name="name" type="text" class="form-control" required>
               </div>
               <div class="mb-3 mt-3">
-                <label for="address" class="form-label">Alamat</label>
+                <label for="address" class="form-label">Alamat Domisili</label>
                 <input name="address" id="address" type="text" class="form-control" required>
               </div>
               <div class="mb-3 mt-3">
@@ -165,7 +165,7 @@
                   <option value="{{ $profile->name }}">{{ $profile->name }}</option>
                   @endforeach
                 </select>
-                <input type="file" name="criteria_photo[]" class="mt-2">
+                <input type="file" name="criteria_image[]" class="mt-2">
               </div>
               @endforeach
               <button type="submit" class="btn btn-success rounded-pill mt-2 ">Daftar</button>

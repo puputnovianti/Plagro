@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\NotifikasiPendaftaran;
 use App\Models\Criteria;
 use App\Models\Calculation;
+use App\Models\CriteriaImage;
 use App\Models\IdealProfile;
 use App\Models\Profile;
 use App\Models\Retailer;
@@ -62,12 +63,29 @@ class RetailerController extends Controller
         $retailer = new Retailer;
         $retailer->email = $data['email'];
         $retailer->name = $data['name'];
+        $retailer->address = $data['address'];
         $retailer->location = $data['location'];
+        $retailer->latitude = $data['latitude'];
+        $retailer->longitude = $data['longitude'];
         $retailer->save();
 
-        $ideal_profile = IdealProfile::get();
-        // dd($ideal_profile);
+        //store images
+        if ($request->hasfile('criteria_image')) {
+            $images = $request->file('criteria_image');
 
+            foreach ($images as $image) {
+                $name = $image->getClientOriginalName();
+                $image->storeAs('CriteriaImages', $name);
+
+                CriteriaImage::create([
+                    'image_name' => $name,
+                    'retailer_id' => $retailer->id
+                ]);
+            }
+        }
+
+        //store profile
+        $ideal_profile = IdealProfile::get();
         if (is_countable($data['retailer_profile_name']) && count($data['retailer_profile_name']) > 0) {
             foreach ($data['retailer_profile_name'] as $item => $value) {
                 $data2 = array(
@@ -159,8 +177,8 @@ class RetailerController extends Controller
 
         $calculation = new Calculation;
         $calculation->retailer_id = $retailer->id;
-        $calculation->cfactor = $ratacf;
-        $calculation->sfactor = $ratasf;
+        $calculation->cfactor = $totalcf;
+        $calculation->sfactor = $totalsf;
         $calculation->total_score = $total;
         $calculation->save();
 
