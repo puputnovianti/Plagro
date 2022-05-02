@@ -16,6 +16,8 @@ class AdminController extends Controller
 
         $bulan = Retailer::select(DB::raw("MONTHNAME(created_at) as bulan"))->GroupBy(DB::raw("MONTHNAME(created_at)"))->pluck('bulan');
 
-        return view('/dashboard.index', compact('jmlretailer', 'bulan'));
+        $retailers = Retailer::orderBy('id', 'desc')->limit(6)->get();
+
+        return view('/dashboard.index', compact('jmlretailer', 'bulan', 'retailers'));
     }
 }

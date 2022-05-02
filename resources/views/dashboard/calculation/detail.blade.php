@@ -23,6 +23,11 @@
                 <td>{{ $retailer->email }}</td>
             </tr>
             <tr>
+                <th scope="col">Alamat Domisili</th>
+                <td> : </td>
+                <td>{{ $retailer->address }}</td>
+            </tr>
+            <tr>
                 <th scope="col">Lokasi Ritel</th>
                 <td> : </td>
                 <td>{{ $retailer->location }}</td>
