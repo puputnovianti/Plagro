@@ -150,7 +150,8 @@ class CalculationController extends Controller
             [
                 'retailer' => $retailer,
                 'details' => $retailer->retailerDetails,
-                'calculations' => $retailer->calculation
+                'calculations' => $retailer->calculation,
+                'images' => $retailer->profileImages
 
             ]
         );

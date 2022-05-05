@@ -74,5 +74,44 @@
             @endforeach
         </table>
     </div>
+    <div class="shadow p-3 my-3">
+        <h4 class="h4">Foto Profil Lokasi</h4>
+        <div class="row justify-content-center m-4">
+            @foreach($images as $image)
+            <div class="col-sm-4">
+                <img class="img-thumbnail" src="{{ asset('storage/ProfileImages/' . $image->image_name) }}" alt="criteria image">
+            </div>
+            @endforeach
+        </div>
+    </div>
+    <div class="shadow p-3 my-3">
+        <h4 class="h4">Denah Lokasi</h4>
+        <div id="map" class="my-3 p-3"></div>
+    </div>
 </main>
+@endsection
+
+@section('script')
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlkOctpu1w95v0wRJ2Y2R9KJW28nfTxOM&callback=initMap&v=weekly" defer></script>
+<script>
+    var map;
+
+    function initMap() {
+        var loc = {
+            lat: <?php echo $retailer->latitude; ?>,
+            lng: <?php echo $retailer->longitude; ?>
+        };
+
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: loc,
+        });
+
+        var marker = new google.maps.Marker({
+            position: loc,
+            map: map,
+            draggable: true
+        });
+    }
+</script>
 @endsection

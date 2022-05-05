@@ -5,19 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RetailerProfile extends Model
+class ProfileImage extends Model
 {
     use HasFactory;
     protected $guarded = [];
 
-
     public function retailer()
     {
         return $this->belongsTo(Retailer::class);
-    }
-
-    public function profile()
-    {
-        return $this->belongsTo(Profile::class);
     }
 }

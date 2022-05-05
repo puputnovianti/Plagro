@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCriteriaImagesTable extends Migration
+class CreateProfileImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCriteriaImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('criteria_images', function (Blueprint $table) {
+        Schema::create('profile_images', function (Blueprint $table) {
             $table->id();
             $table->integer('retailer_id')->unsigned()->nullable();
             $table->foreign('retailer_id')->references('id')->on('retailers')->onDelete('cascade');
@@ -29,6 +29,6 @@ class CreateCriteriaImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('criteria_images');
+        Schema::dropIfExists('profile_images');
     }
 }

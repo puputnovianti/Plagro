@@ -8,6 +8,7 @@ use App\Models\Calculation;
 use App\Models\CriteriaImage;
 use App\Models\IdealProfile;
 use App\Models\Profile;
+use App\Models\ProfileImage;
 use App\Models\Retailer;
 use App\Models\RetailerDetail;
 use App\Models\RetailerProfile;
@@ -59,6 +60,10 @@ class RetailerController extends Controller
      */
     public function store(Request $request)
     {
+        $validateData = $request->validate([
+            'image' => 'image'
+        ]);
+
         $data = $request->all();
         $retailer = new Retailer;
         $retailer->email = $data['email'];
@@ -70,14 +75,14 @@ class RetailerController extends Controller
         $retailer->save();
 
         //store images
-        if ($request->hasfile('criteria_image')) {
-            $images = $request->file('criteria_image');
+        if ($request->hasfile('profile_image')) {
+            $images = $request->file('profile_image');
 
             foreach ($images as $image) {
                 $name = $image->getClientOriginalName();
-                $image->storeAs('CriteriaImages', $name);
+                $image->storeAs('ProfileImages', $name);
 
-                CriteriaImage::create([
+                ProfileImage::create([
                     'image_name' => $name,
                     'retailer_id' => $retailer->id
                 ]);

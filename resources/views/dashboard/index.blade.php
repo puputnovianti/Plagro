@@ -84,7 +84,7 @@
           <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $retailer->name }}</td>
-            <td>{{$retailer->location}}</td>
+            <td>{{ $retailer->location }}</td>
             <td style="text-align: center;">
               <a class="badge bg-info" href="/dashboard/calculation/{{$retailer->id}}"><span data-feather="eye"></span></a>
             </td>

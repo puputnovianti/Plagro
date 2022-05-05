@@ -35,9 +35,9 @@ class Retailer extends Authenticatable
     {
         return $this->hasMany(RetailerDetail::class);
     }
-    public function criteriaImages()
+    public function profileImages()
     {
-        return $this->hasMany(CriteriaImage::class);
+        return $this->hasMany(ProfileImage::class);
     }
 
     public function calculation()

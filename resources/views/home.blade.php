@@ -165,7 +165,7 @@
                   <option value="{{ $profile->name }}">{{ $profile->name }}</option>
                   @endforeach
                 </select>
-                <input type="file" name="criteria_image[]" class="mt-2">
+                <input type="file" name="profile_image[]" class="mt-2">
               </div>
               @endforeach
               <button type="submit" class="btn btn-success rounded-pill mt-2 ">Daftar</button>

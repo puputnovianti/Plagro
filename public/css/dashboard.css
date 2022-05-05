@@ -148,6 +148,17 @@ th a {
   border-radius: 8px;
 }
 
+img {
+  width: 300px;
+  height: 300px;
+}
+
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
 
 @media screen and (max-width: 768px) {
   .ilustration {
