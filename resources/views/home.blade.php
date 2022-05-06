@@ -9,6 +9,7 @@
   <link href="/css/home.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <title>Plagro.id</title>
 </head>
@@ -105,7 +106,7 @@
           <h1 class="display-5 fw-bold">Penuhi Kebutuhan Anda Bersama Kami</h1>
           <p>Plagro.id merupakan sebuah brand yang menawarkan produk pertanian organik segar. Kami membuka kesempatan untuk menjadi mitra outlet Plagro.id untuk menjual produk berkualitas kami.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita minus, labore nostrum fuga incidunt quidem placeat unde delectus praesentium aperiam! Repudiandae suscipit porro voluptate autem error cupiditate eveniet amet officia!</p>
-          <a class="link-shop" style="color: white; text-decoration: none" aria-current="page" href="https://plagro.id/" style="border-radius: 25px;">plagro.id >></a>
+          <a class="link-shop" style="color: white;" aria-current="page" href="https://plagro.id/" style="border-radius: 25px;">plagro.id</a>
         </div>
       </div>
     </div>

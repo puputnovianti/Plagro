@@ -16,7 +16,13 @@ class CalculationController extends Controller
 {
     public function index()
     {
-        $retailers = Retailer::sortable()->paginate(10);
+        $retailers = Retailer::latest();
+        if (request('search')) {
+            $retailers = Retailer::where('location', 'like', '%' . request('search') . '%')->sortable()->paginate(10);
+        } else {
+
+            $retailers = Retailer::sortable()->paginate(10);
+        }
 
         return view('dashboard.calculation.index', compact('retailers'));
     }
