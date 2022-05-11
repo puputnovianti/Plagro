@@ -99,14 +99,17 @@
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript">
+  var score = <?php echo json_encode($score) ?>;
   var retailer = <?php echo json_encode($jmlretailer) ?>;
-  var bulan = <?php echo json_encode($bulan) ?>;
   Highcharts.chart('grafik', {
     title: {
-      text: 'Garfik Jumlah Pendaftaran Calon Retailer'
+      text: 'Garfik Total Score Pendaftar'
     },
     xAxis: {
-      categories: bulan
+      categories: score,
+      title: {
+        text: 'Total Score'
+      }
     },
     yAxis: {
       title: {

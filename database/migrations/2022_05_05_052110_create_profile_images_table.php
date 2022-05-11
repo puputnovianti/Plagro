@@ -17,6 +17,7 @@ class CreateProfileImagesTable extends Migration
             $table->id();
             $table->integer('retailer_id')->unsigned()->nullable();
             $table->foreign('retailer_id')->references('id')->on('retailers')->onDelete('cascade');
+            $table->string('criteria_name')->nullable();
             $table->string('image_name')->nullable();
             $table->timestamps();
         });

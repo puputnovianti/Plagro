@@ -156,21 +156,39 @@
               <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h3 class="text-muted">Profil Lokasi</h3>
               </div>
+              <div>
+                <ul>
+                  <li>Pilihlah profil sesuan dengan profil lokasi ritel yang Anda</li>
+                  <li>Unggah foto sesuai dengan profil lokasi Anda</li>
+                  <li>Foto bersifat opsional</li>
+                  <li>Format foto yang dapat diunggah adalah .jpg/.jpeg/.png</li>
+                </ul>
+              </div>
 
               @foreach($criterias as $criteria)
               <div class="mb-3 mt-3">
-                <input type="hidden" value="{{ $criteria->name }}" name="criteria_name[]">
                 <label class="form-label col-form-label">{{$criteria->name}}</label>
-                <select class="form-select" name="retailer_profile_name[]" aria-label="Default select example">
+                <select class="form-select" name="retailer_profile_name[]">
                   @foreach($criteria->profiles as $profile)
                   <option value="{{ $profile->name }}">{{ $profile->name }}</option>
                   @endforeach
                 </select>
-                <input type="file" name="profile_image[]" class="mt-2">
+              </div>
+              @endforeach
+              @foreach($criteriaImg as $criteria)
+              <div class="mb-3 mt-3">
+                <label class="form-label col-form-label">{{$criteria->name}}</label>
+                <select class="form-select" name="retailer_profile_name[]">
+                  @foreach($criteria->profiles as $profile)
+                  <option value="{{ $profile->name }}">{{ $profile->name }}</option>
+                  @endforeach
+                </select>
+                <input type="file" name="profile_image[]" class="mt-2" multiple required>
               </div>
               @endforeach
               <button type="submit" class="btn btn-success rounded-pill mt-2 ">Daftar</button>
             </form>
+
           </div>
         </main>
       </div>

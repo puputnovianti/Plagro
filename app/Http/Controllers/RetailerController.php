@@ -29,12 +29,15 @@ class RetailerController extends Controller
      */
     public function index()
     {
+        // $is_addImages = Criteria::where('is_addImages', 1)->first()->name;
+        // dd($is_addImages);
         return view(
             'home',
             [
-                'criterias' => Criteria::with(['profiles'])->get(),
+                'criterias' => Criteria::where('is_addImages', 0)->get(),
+                'criteriaImg' => Criteria::where('is_addImages', 1)->get(),
                 'profiles' => Profile::all(),
-                'ideal_profiles' => IdealProfile::all()
+                'ideal_profiles' => IdealProfile::all(),
             ]
         );
     }
@@ -60,9 +63,9 @@ class RetailerController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = $request->validate([
-            'image' => 'image'
-        ]);
+        // $validateData = $request->validate([
+        //     'image' => 'image'
+        // ]);
 
         $data = $request->all();
         $retailer = new Retailer;
@@ -74,34 +77,32 @@ class RetailerController extends Controller
         $retailer->longitude = $data['longitude'];
         $retailer->save();
 
-        //store images
-        if ($request->hasfile('profile_image')) {
-            $images = $request->file('profile_image');
 
-            foreach ($images as $image) {
-                $name = $image->getClientOriginalName();
-                $image->storeAs('ProfileImages', $name);
 
-                ProfileImage::create([
-                    'image_name' => $name,
-                    'retailer_id' => $retailer->id
-                ]);
-            }
-        }
-
-        //store profile
-        $ideal_profile = IdealProfile::get();
         if (is_countable($data['retailer_profile_name']) && count($data['retailer_profile_name']) > 0) {
             foreach ($data['retailer_profile_name'] as $item => $value) {
+                //get criteria name
+                $criteriaId[$item] = Profile::where('name', $data['retailer_profile_name'][$item])->first()->criteria_id;
+                $criteria_name[$item] = Criteria::where('id', $criteriaId[$item])->first()->name;
+                //get factor id
+                $factor_id[$item] = Criteria::where('id', $criteriaId[$item])->first()->factor_id;
+                //get ideal profile name
+                $profileId[$item] = IdealProfile::where('criteria_id', $criteriaId[$item])->first()->profile_id;
+                $ideal_profile_name[$item] = Profile::where('id', $profileId[$item])->first()->name;
+                //get ideal profile score
+                $ideal_profile_score[$item] = Profile::where('id', $profileId[$item])->first()->score;
+                //get retailer profile score
+                $retailer_profile_score[$item] = Profile::where('name', $data['retailer_profile_name'][$item])->first()->score;
+
                 $data2 = array(
                     'retailer_id' => $retailer->id,
-                    'factor_id' => Criteria::where('name', $data['criteria_name'][$item])->first()->factor_id,
-                    'criteria_name' => $data['criteria_name'][$item],
+                    'factor_id' => $factor_id[$item],
+                    'criteria_name' => $criteria_name[$item],
                     'retailer_profile_name' => $data['retailer_profile_name'][$item],
-                    'retailer_profile_score' => Profile::where('name', $data['retailer_profile_name'][$item])->first()->score,
-                    'ideal_profile_name' => $ideal_profile[$item]->profile()->first()->name,
-                    'ideal_profile_score' => $ideal_profile[$item]->profile()->first()->score,
-                    'gap' => $ideal_profile[$item]->profile()->first()->score - Profile::where('name', $data['retailer_profile_name'][$item])->first()->score,
+                    'retailer_profile_score' => $retailer_profile_score[$item],
+                    'ideal_profile_name' => $ideal_profile_name[$item],
+                    'ideal_profile_score' => $ideal_profile_score[$item],
+                    'gap' => $ideal_profile_score[$item] - $retailer_profile_score[$item],
                 );
                 RetailerDetail::create($data2);
             }
@@ -179,13 +180,30 @@ class RetailerController extends Controller
         //total nilai
         $total = $totalcf + $totalsf;
 
-
         $calculation = new Calculation;
         $calculation->retailer_id = $retailer->id;
         $calculation->cfactor = $totalcf;
         $calculation->sfactor = $totalsf;
         $calculation->total_score = $total;
         $calculation->save();
+
+        //store images
+        if ($request->hasfile('profile_image')) {
+            $images = $request->file('profile_image');
+
+            foreach ($images as $image) {
+                $name = $retailer->id . '-image-' . time() . rand(1, 1000) . '.' . $image->extension();
+                $image->storeAs('ProfileImages', $name);
+                $dataImg = array(
+                    'retailer_id' => $retailer->id,
+                    'image_name' => $name,
+                    // 'criteria_name' => $data['criteriaImg_name']
+
+                );
+                // dd($dataImg);
+                ProfileImage::create($dataImg);
+            }
+        }
 
 
         Mail::to($retailer->email)->send(new NotifikasiPendaftaran());

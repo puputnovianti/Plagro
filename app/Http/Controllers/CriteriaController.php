@@ -17,7 +17,8 @@ class CriteriaController extends Controller
     {
 
         return view('dashboard.criterias.index', [
-            'criterias' => Criteria::with(['profiles'])->get()
+            'criterias' => Criteria::with(['profiles'])->get(),
+
         ]);
     }
 
@@ -29,9 +30,15 @@ class CriteriaController extends Controller
     }
     public function store(Request $request)
     {
+        if ($request->has('is_addImages')) {
+            $request->is_addImages = 1;
+        } else {
+            $request->is_addImages = 0;
+        }
         Criteria::create([
             'name' => $request->name,
             'factor_id' => $request->factor_id,
+            'is_addImages' => $request->is_addImages
         ]);
 
         return redirect('dashboard/criterias')->with('success', 'Data kriteria berhasil ditambahkan. Silahkan menambahkan data profil!');

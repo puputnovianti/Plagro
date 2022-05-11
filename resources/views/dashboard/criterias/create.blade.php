@@ -17,6 +17,8 @@
         <option value="{{ $factor->id }}">{{$factor->name}}</option>
         @endforeach
       </select>
+      <input type="checkbox" value="1" name="is_addImages">
+      <label for="is_addImages">Tambahkan gambar</label>
       <button type="submit" class="btn btn-success rounded-pill mt-3">Tambah</button>
     </form>
   </div>

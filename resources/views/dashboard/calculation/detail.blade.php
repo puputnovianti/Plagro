@@ -79,7 +79,7 @@
         <div class="row justify-content-center m-4">
             @foreach($images as $image)
             <div class="col-sm-4">
-                <img class="img-thumbnail" src="{{ asset('storage/ProfileImages/' . $image->image_name) }}" alt="criteria image">
+                <img class="img-thumbnail" src="{{ asset('storage/ProfileImages/' . $image->image_name) }}" alt="profile image">
             </div>
             @endforeach
         </div>
