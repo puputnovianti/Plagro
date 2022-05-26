@@ -1,43 +1,92 @@
-/* .container {
-  max-width: 960px;
-} */
-
-/*
- * Custom translucent site header
- */
-
-.site-header {
-  background-color: rgba(0, 0, 0, .85);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.site-header a {
-  /* color: #e7e4e4; */
-  transition: color .15s ease-in-out;
+/* navbar */
+#nav {
+    position: sticky;
+    top: 0;
+    z-index: 1001;
 }
 
-.site-header a:hover {
-  color: #fff;
-  text-decoration: none;
+.navbar {
+    background-image: linear-gradient(to right, #239660, #8bc9a9);
+}
+
+.navbar-brand span {
+    font-weight: bolder;
+    color: #fff;
+}
+
+.navbar-nav li {
+    padding: 0 10px;
+}
+
+.navbar-nav li a {
+    color: #fff !important;
+    font-weight: bold;
+}
+
+/* banner */
+#banner {
+    position: relative;
+    background-image: linear-gradient(to right, #239660, #8bc9a9);
+    color: #fff;
+    padding: 5%;
+}
+
+.title {
+    margin-top: 88px;
+}
+
+.ban-img {
+    position: relative;
+    z-index: 1000;
+}
+
+.wave {
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+}
+
+/* about */
+#about {
+    padding: 80px 0;
+}
+
+/* mitra */
+#mitra {
+    padding: 80px 0;
+    background: rgb(247, 247, 247);
+}
+
+.mi-img {
+    position: relative;
+    z-index: 1000;
+}
+
+/* features */
+#features {
+    padding: 80px 0;
+
+}
+
+.features {
+    padding: 20px;
+}
+
+.features img {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
 }
 
 
-
-.f a {
-  text-decoration: none;
-}
-
-
-
-/*
- * Dummy devices (replace them with your own or something else entirely!)
- */
-.jumbotron {
+/* .jumbotron {
   padding: 2rem 1rem;
   height: 500px;
-  /* background-color: #8e8e8e; */
-
 }
 
 .btn {
@@ -53,53 +102,13 @@
 }
 
 
-.card-body {
-  background-color: #a0c9b4;
-}
-
-.product-device {
-  position: absolute;
-  right: 10%;
-  bottom: -30%;
-  width: 300px;
-  height: 540px;
-  background-color: #333;
-  border-radius: 21px;
-  transform: rotate(30deg);
-}
-
-.product-device::before {
-  position: absolute;
-  top: 10%;
-  right: 10px;
-  bottom: 10%;
-  left: 10px;
-  content: "";
-  background-color: rgba(255, 255, 255, .1);
-  border-radius: 5px;
-}
-
-.product-device-2 {
-  top: -25%;
-  right: auto;
-  bottom: 0;
-  left: 5%;
-  background-color: #e5e5e5;
-}
-
 .link-shop a:hover {
   color: #fff;
   text-decoration: none;
 }
 
 
-/*
- * Extra utilities
- */
 
-/* .flex-equal > * {
-  flex: 1;
-} */
 @media screen and (max-width: 768px) {
   .ilustration {
     display: none;
@@ -117,4 +126,4 @@
   .jumbotron {
     height: 350px;
   }
-}
+} */

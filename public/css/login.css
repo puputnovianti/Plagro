@@ -1,14 +1,23 @@
-html body{
+html body {
     width: 100%;
     height: 100%;
     background-color: #a0c9b4;
 }
 
-.f{
+.f {
     border-radius: 25px;
     background-color: #fff;
 }
-.btn{
+
+.btn {
     border-radius: 25px;
     width: 200px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .ilustration {
+        display: none;
+    }
+
 }

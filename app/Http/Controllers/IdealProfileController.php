@@ -32,7 +32,6 @@ class IdealProfileController extends Controller
     public function store(Request $request)
     {
         IdealProfile::create([
-            'factor_id' => $request->factor_id,
             'criteria_id' => $request->criteria_id,
             'profile_id' => $request->profile_id
         ]);

@@ -103,7 +103,7 @@
   var retailer = <?php echo json_encode($jmlretailer) ?>;
   Highcharts.chart('grafik', {
     title: {
-      text: 'Garfik Total Score Pendaftar'
+      text: 'Garfik Total Nilai Pendaftar'
     },
     xAxis: {
       categories: score,

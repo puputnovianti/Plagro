@@ -9,7 +9,10 @@
       @csrf
       <div class="mb-3">
         <label for="name" class="form-label">Nama Kriteria</label>
-        <input name="name" type="text" class="form-control">
+        <input name="name" type="text" class="form-control @error('name') is-invalid @enderror">
+        @error('name')
+        <p class="text-danger">{{ $message }}</p>
+        @enderror
       </div>
       <label for="factor_id" class="form-label">Faktor</label>
       <select class="form-select" name="factor_id">
@@ -17,8 +20,10 @@
         <option value="{{ $factor->id }}">{{$factor->name}}</option>
         @endforeach
       </select>
-      <input type="checkbox" value="1" name="is_addImages">
-      <label for="is_addImages">Tambahkan gambar</label>
+      <div class="mt-3">
+        <input type="checkbox" value="1" name="is_addImages">
+        <label for="is_addImages">Tambahkan gambar</label>
+      </div>
       <button type="submit" class="btn btn-success rounded-pill mt-3">Tambah</button>
     </form>
   </div>

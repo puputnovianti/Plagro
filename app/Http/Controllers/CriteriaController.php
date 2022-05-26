@@ -30,6 +30,11 @@ class CriteriaController extends Controller
     }
     public function store(Request $request)
     {
+
+        $request->validate([
+            'name' => 'required|unique:criterias|max:225'
+        ]);
+
         if ($request->has('is_addImages')) {
             $request->is_addImages = 1;
         } else {

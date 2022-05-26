@@ -98,19 +98,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         IdealProfile::create([
-            'factor_id' => 1,
             'criteria_id' => 1,
             'profile_id' => 5,
         ]);
 
         IdealProfile::create([
-            'factor_id' => 1,
             'criteria_id' => 2,
             'profile_id' => 7,
         ]);
 
         IdealProfile::create([
-            'factor_id' => 2,
             'criteria_id' => 3,
             'profile_id' => 8,
         ]);
