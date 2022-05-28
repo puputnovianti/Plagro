@@ -23,6 +23,11 @@
                 <td>{{ $retailer->email }}</td>
             </tr>
             <tr>
+                <th scope="col">No HP</th>
+                <td> : </td>
+                <td>{{ $retailer->phone }}</td>
+            </tr>
+            <tr>
                 <th scope="col">Alamat Domisili</th>
                 <td> : </td>
                 <td>{{ $retailer->address }}</td>
@@ -76,8 +81,17 @@
     </div>
     <div class="shadow p-3 my-3">
         <h4 class="h4">Foto Profil Lokasi</h4>
-        <div class="row justify-content-center m-4">
-            @foreach($images as $image)
+        <h5 class="text-muted">Tempat</h5>
+        <div class="row justify-content-start m-4">
+            @foreach($tempat_images as $image)
+            <div class="col-sm-4">
+                <img class="img-thumbnail" src="{{ asset('storage/ProfileImages/' . $image->image_name) }}" alt="profile image">
+            </div>
+            @endforeach
+        </div>
+        <h5 class="text-muted">Fasilitas</h5>
+        <div class="row justify-content-start m-4">
+            @foreach($fasilitas_images as $image)
             <div class="col-sm-4">
                 <img class="img-thumbnail" src="{{ asset('storage/ProfileImages/' . $image->image_name) }}" alt="profile image">
             </div>

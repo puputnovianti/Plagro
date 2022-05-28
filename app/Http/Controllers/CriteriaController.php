@@ -35,15 +35,9 @@ class CriteriaController extends Controller
             'name' => 'required|unique:criterias|max:225'
         ]);
 
-        if ($request->has('is_addImages')) {
-            $request->is_addImages = 1;
-        } else {
-            $request->is_addImages = 0;
-        }
         Criteria::create([
             'name' => $request->name,
             'factor_id' => $request->factor_id,
-            'is_addImages' => $request->is_addImages
         ]);
 
         return redirect('dashboard/criterias')->with('success', 'Data kriteria berhasil ditambahkan. Silahkan menambahkan data profil!');

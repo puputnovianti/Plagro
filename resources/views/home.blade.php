@@ -33,7 +33,7 @@
                             <a class="nav-link" href="#about">Tentang Kami</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#mitra">Kualifikasi</a>
+                            <a class="nav-link" href="#mitra">Kualifikasi Tempat</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#features">Penawaran</a>

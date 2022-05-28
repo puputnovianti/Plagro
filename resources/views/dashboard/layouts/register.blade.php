@@ -17,6 +17,14 @@
 
 <body>
     <div class="container">
+        @if(session()->has('success'))
+        <div class="container">
+            <div class="alert alert-info alert-dismissible fade show mt-5" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+        @endif
         <div class="row justify-content-start">
             <div class="col-md-5">
                 <h2 class="mt-5">Plagro.id</h2>
@@ -86,11 +94,15 @@
                 zoom: 13
             });
 
-            var input = document.getElementById('searchInput');
+            var input = document.getElementById('location');
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+            var inputAddress = document.getElementById('address');
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(inputAddress);
 
 
             var autocomplete = new google.maps.places.Autocomplete(input);
+            autocomplete.bindTo('bounds', map);
+            var autocomplete = new google.maps.places.Autocomplete(inputAddress);
             autocomplete.bindTo('bounds', map);
 
             var infowindow = new google.maps.InfoWindow();

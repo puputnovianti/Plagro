@@ -6,6 +6,7 @@ use App\Models\Calculation;
 use App\Models\Criteria;
 use App\Models\IdealProfile;
 use App\Models\Profile;
+use App\Models\ProfileImage;
 use App\Models\RetailerProfile;
 use App\Models\Retailer;
 use App\Models\RetailerDetail;
@@ -157,7 +158,8 @@ class CalculationController extends Controller
                 'retailer' => $retailer,
                 'details' => $retailer->retailerDetails,
                 'calculations' => $retailer->calculation,
-                'images' => $retailer->profileImages
+                'tempat_images' => ProfileImage::where('retailer_id', $retailer->id)->where("criteria_name", "Tempat")->get(),
+                'fasilitas_images' => ProfileImage::where('retailer_id', $retailer->id)->where("criteria_name", "Fasilitas")->get()
 
             ]
         );

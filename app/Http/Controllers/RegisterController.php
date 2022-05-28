@@ -188,6 +188,6 @@ class RegisterController extends Controller
 
 
         Mail::to($retailer->email)->send(new NotifikasiPendaftaran());
-        return redirect('/')->with('success', 'Pendaftaran berhasil dilakukan. Silahkan cek email anda.');
+        return redirect('/register')->with('success', 'Pendaftaran berhasil dilakukan. Silahkan cek email anda.');
     }
 }

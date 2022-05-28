@@ -47,7 +47,7 @@
                         <form action="/dashboard/profiles/{{ $profile->id }}" method="POST" class="d-inline">
                             @method('delete')
                             @csrf
-                            <button type="submit" class="badge bg-danger border-0"><span data-feather="x-circle"></span></button>
+                            <button type="submit" class="badge bg-danger border-0 show-alert-delete-box" data-toggle="tooltip" title='Delete'><span data-feather="x-circle"></span></button>
                         </form>
                     </td>
                 </tr>
@@ -56,4 +56,30 @@
         </table>
     </div>
 </main>
+@endsection
+
+@section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script type="text/javascript">
+    $('.show-alert-delete-box').click(function(event) {
+        var form = $(this).closest("form");
+        var name = $(this).data("name");
+        event.preventDefault();
+        swal({
+            title: "Apakah Anda yakin menghapus data ini?",
+            text: "Data profil akan terhapus.",
+            icon: "warning",
+            type: "warning",
+            buttons: ["Batal", "Hapus"],
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, hapus data!'
+        }).then((willDelete) => {
+            if (willDelete) {
+                form.submit();
+            }
+        });
+    });
+</script>
 @endsection

@@ -17,7 +17,6 @@ class CreateCriteriasTable extends Migration
             $table->increments('id');
             $table->foreignId('factor_id');
             $table->string('name');
-            $table->boolean('is_addImages')->default(false);
             $table->timestamps();
         });
     }
