@@ -106,7 +106,7 @@
 @endsection
 
 @section('script')
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlkOctpu1w95v0wRJ2Y2R9KJW28nfTxOM&callback=initMap&v=weekly" defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtLh1aP1Oh6epIP3_2ycC0Ku_AVQauzjs&callback=initMap&v=weekly" defer></script>
 <script>
     var map;
 

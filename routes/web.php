@@ -11,20 +11,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RetailerController;
 use App\Http\Controllers\RetailerProfileController;
-use App\Mail\SendMail;
-use App\Mail\SendMailMarkdown;
-use App\Models\IdealProfile;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('dashboard/categories', [CategoryController::class, 'index'])->middleware('admin');
-Route::get('dashboard/categories/create', [CategoryController::class, 'create'])->middleware('admin');
-Route::post('dashboard/categories', [CategoryController::class, 'store'])->middleware('admin');
-Route::get('dashboard/categories/{id}/edit', [CategoryController::class, 'edit'])->middleware('admin');
-Route::put('dashboard/categories/{id}', [CategoryController::class, 'update'])->middleware('admin');
-Route::delete('dashboard/categories/{id}', [CategoryController::class, 'destroy'])->middleware('admin');
 
 Route::get('dashboard/criterias', [CriteriaController::class, 'index'])->middleware('admin');
 Route::get('dashboard/criterias/create', [CriteriaController::class, 'create'])->middleware('admin');
@@ -33,7 +23,6 @@ Route::get('dashboard/criterias/{criteria:id}', [CriteriaController::class, 'sho
 
 
 Route::post('dashboard/criterias/criteria', [CriteriaController::class, 'storeprofile']);
-// Route::post('dashboard/criterias/criteria', [CriteriaController::class, 'storeidealprofile']);
 
 Route::get('dashboard/ideal_profile/{criteria:id}', [IdealProfileController::class, 'show'])->middleware('admin');
 Route::post('dashboard/ideal_profile/{id}', [IdealProfileController::class, 'store'])->middleware('admin');
@@ -67,16 +56,8 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [AdminController::class, 'index'])->middleware('admin');
 
-// Route::resource('/retailer', RetailerController::class)->middleware('retailer');
-// Route::get('retailer', [RetailerController::class, 'index'])->middleware('retailer');
 Route::get('/', [RetailerController::class, 'index']);
-// Route::get('/', [RetailerController::class, 'create']);
 Route::post('/', [RetailerController::class, 'store']);
-
-// Route::get('retailer/{id}/edit', [RetailerController::class, 'edit']);
-// Route::put('retailer/{id}', [RetailerController::class, 'update']);
-// Route::get('/retailer/retailer/{retailer:id}', [RetailerController::class, 'show']);
-
 
 
 Route::get('retailer/retailer_profile/{id}/edit', [RetailerProfileController::class, 'edit']);

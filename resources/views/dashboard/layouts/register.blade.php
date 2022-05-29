@@ -31,6 +31,8 @@
                 <h6 class="text-muted">Selamat datang,
                     <br>silahkan melakukan registrasi dengan pelengkapi form ini untuk mendaftarkan lokasi anda.
                 </h6>
+                <h6 class="text-muted mt-3">Setelah berhasil melakukan pendaftaran Anda akan menerima email konfirmasi pendaftaran dari Plagro.id. Kami akan memeriksa profil lokasi dan tempat Anda terlebih dahulu.</h6>
+                <h6 class="text-muted">Apabila tempat Anda memenuhi kualifikasi kami maka kami akan menguhubungi Anda melalui email atau whatsapp.</h6>
                 <div class="ilustration">
                     <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" width="400" height="400" viewBox="0 0 768.18283 692.30756" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <path d="M333.2003,712.3703,307.587,735.95038l20.35547-34.15485c-16.03711-29.08209-42.26563-54.21613-42.26563-54.21613s-54.415,52.13392-54.415,93.11457,24.36231,55.28955,54.415,55.28955c30.05225,0,54.41455-14.3089,54.41455-55.28955C340.09141,731.57251,337.39171,721.899,333.2003,712.3703Z" transform="translate(-215.90859 -103.84622)" fill="#f2f2f2" />
@@ -81,7 +83,7 @@
         </div>
     </div>
     </div>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlkOctpu1w95v0wRJ2Y2R9KJW28nfTxOM&libraries=places&callback=initMap">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtLh1aP1Oh6epIP3_2ycC0Ku_AVQauzjs&libraries=places&callback=initMap">
     </script>
 
     <script>

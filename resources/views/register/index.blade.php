@@ -52,7 +52,7 @@
         </div>
         <div>
             <ul>
-                <li>Unggah foto sesuai dengan profil lokasi Anda</li>
+                <li>Anda dapat mengunggah foto tempat dan fasilitas seperti tempat parkir atau ruang penyimpanan barang Anda lebih dari satu</li>
                 <li>Format foto yang dapat diunggah adalah .jpg/.jpeg/.png</li>
             </ul>
         </div>
@@ -68,7 +68,7 @@
         </div>
         @endforeach
         <div class="my-2">
-            <label class="form-label col-form-label">Foto lokasi ritel</label>
+            <label class="form-label col-form-label">Foto tempat</label>
             <input type="file" name="place[]" class="form-control @error('profile_images') is-invalid @enderror" multiple>
             @error('profile_images')
             <p class="text-danger">{{ $message }}</p>

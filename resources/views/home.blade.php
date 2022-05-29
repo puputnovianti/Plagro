@@ -60,7 +60,7 @@
             </div>
         </div>
         <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#fff" fill-opacity="1" d="M0,256L120,250.7C240,245,480,235,720,234.7C960,235,1200,245,1320,250.7L1440,256L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
+            <path fill="#fff" fill-opacity="1" d="M0,224L120,229.3C240,235,480,245,720,234.7C960,224,1200,192,1320,176L1440,160L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
         </svg>
     </section>
 
@@ -72,8 +72,8 @@
                 </div>
                 <div class="col-md-6">
                     <h1 class="display-5 fw-bold">Penuhi Kebutuhan Anda Bersama Kami</h1>
-                    <p>Plagro.id merupakan sebuah brand yang menawarkan produk pertanian organik segar. Kami membuka kesempatan untuk menjadi mitra outlet Plagro.id untuk menjual produk berkualitas kami.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita minus, labore nostrum fuga incidunt quidem placeat unde delectus praesentium aperiam! Repudiandae suscipit porro voluptate autem error cupiditate eveniet amet officia!</p>
+                    <p>Plagro.id merupakan sebuah brand yang menawarkan produk pertanian organik segar. </p>
+                    <p>Kami membuka kesempatan untuk menjadi mitra outlet Plagro.id untuk menjual produk berkualitas kami.</p>
                     <a class="link-shop" style="color: white;" aria-current="page" href="https://plagro.id/" style="border-radius: 25px;">plagro.id</a>
                 </div>
             </div>
@@ -84,13 +84,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <h2>Apa saja syarat mendaftar sebagai mitra?</h2>
+                    <h4 class="text-muted mt-2">Usaha Kecil (perorangan)</h4>
                     <ul>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Menyediakan tempat dalam ruangan (indoor) atau luar ruangan (outdoor) minimal 3x3 meter</li>
+                        <li>Lokasi tempat yang strategis</li>
+                        <li>Tempat telah memiliki izin yang sah</li>
+                        <li>Melengkapi <a href="register">form pendaftaran</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6">
@@ -110,7 +110,7 @@
                         <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z" />
                         <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z" />
                     </svg>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam, temporibus consequuntur quo accusamus corporis!</p>
+                    <p>Produk Plagro.id adalah hasil dari pertanian organik yang memiliki mutu yang sangat baik sehingga lebih sehat dan bergizi</p>
                 </div>
                 <div class="col-md-4 features">
                     <h4>Komisi Penjualan</h4>
@@ -120,14 +120,14 @@
                         <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z" />
                         <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z" />
                     </svg>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam, temporibus consequuntur quo accusamus corporis!</p>
+                    <p>Komisi penjualan produk yang Anda dapatkan sebesar 80% dari total keuntungan seluruh penjualan produk perminggu</p>
                 </div>
                 <div class="col-md-4 features">
                     <h4>Fasilitas</h4>
                     <svg class="my-3" xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
                         <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z" />
                     </svg>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam, temporibus consequuntur quo accusamus corporis!</p>
+                    <p>Fasilitas yang kami berikan perupa set perlengkapan penjualan seperti tenda, set aplikasi POS, keranjang dan delivery box</p>
                 </div>
             </div>
         </div>
