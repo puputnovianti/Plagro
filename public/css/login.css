@@ -14,6 +14,11 @@ html body {
     width: 200px;
 }
 
+.description {
+    background-color: #d1e7dc;
+    border-radius: 10px;
+}
+
 
 @media screen and (max-width: 768px) {
     .ilustration {

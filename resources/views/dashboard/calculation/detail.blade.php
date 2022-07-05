@@ -2,11 +2,13 @@
 @section('content')
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-4">
 
-    <h2>Detail Calon Retailer</h2>
-    <hr>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Detail Calon Retailer</h1>
+        <a class="btn btn-success rounded-pill ms-auto" href="/dashboard/calculation">Kembali</a>
+    </div>
 
-    <div class="table-responsive shadow p-3">
-        <table cellpadding="5" cellspacing="0">
+    <div class="table-responsive shadow p-3 detail">
+        <table cellpadding="5" cellspacing="0" class="">
             <tr>
                 <th scope="col">Tanggal Pendaftaran</th>
                 <td> : </td>
@@ -52,10 +54,24 @@
                 <td> : </td>
                 <td>{{ $retailer->calculation->total_score }}</td>
             </tr>
+            @isset($retailer->link)
+            <tr>
+                <th scope="col">Link Maps</th>
+                <td> : </td>
+                <td><a target="_blank" rel="noopener noreferrer" href="{{ $retailer->link }}">{{ $retailer->link }}</a></td>
+            </tr>
+            @endisset
+            @empty($retailer->link)
+            <tr>
+                <th scope="col">Link Maps</th>
+                <td> : </td>
+                <td> -</td>
+            </tr>
+            @endempty
         </table>
     </div>
 
-    <div class="table-responsive shadow p-3 mt-3">
+    <div class="table-responsive shadow p-3 mt-3 detail">
         <table class="table table-borderless">
             <tr>
                 <th scope="col">No</th>
@@ -79,17 +95,10 @@
             @endforeach
         </table>
     </div>
-    <div class="shadow p-3 my-3">
-        <h4 class="h4">Foto Profil Lokasi</h4>
+    <div class="shadow p-3 my-3 detail">
+        <h4 class="h4">Gambar Lokasi</h4>
+        @if($tempat_images->count())
         <h5 class="text-muted">Tempat</h5>
-        <div class="row justify-content-start m-4">
-            @foreach($tempat_images as $image)
-            <div class="col-sm-4">
-                <img class="img-thumbnail" src="{{ asset('storage/ProfileImages/' . $image->image_name) }}" alt="profile image">
-            </div>
-            @endforeach
-        </div>
-        <h5 class="text-muted">Fasilitas</h5>
         <div class="row justify-content-start m-4">
             @foreach($fasilitas_images as $image)
             <div class="col-sm-4">
@@ -97,15 +106,18 @@
             </div>
             @endforeach
         </div>
+        @else
+        <p class="text-muted">Gambar tidak tersedia.</p>
+        @endif
     </div>
-    <div class="shadow p-3 my-3">
+    <!-- <div class="shadow p-3 my-3 detail">
         <h4 class="h4">Denah Lokasi</h4>
         <div id="map" class="my-3 p-3"></div>
-    </div>
+    </div> -->
 </main>
 @endsection
 
-@section('script')
+<!-- @section('script')
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtLh1aP1Oh6epIP3_2ycC0Ku_AVQauzjs&callback=initMap&v=weekly" defer></script>
 <script>
     var map;
@@ -128,4 +140,4 @@
         });
     }
 </script>
-@endsection
+@endsection -->

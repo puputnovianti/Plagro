@@ -1,11 +1,11 @@
 body {
-  font-size: .875rem;
+    font-size: .875rem;
 }
 
 .feather {
-  width: 16px;
-  height: 16px;
-  vertical-align: text-bottom;
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
 }
 
 /*
@@ -13,67 +13,67 @@ body {
  */
 
 .sidebar {
-  position: fixed;
-  top: 0;
-  /* rtl:raw:
+    position: fixed;
+    top: 0;
+    /* rtl:raw:
   right: 0;
   */
-  bottom: 0;
-  /* rtl:remove */
-  left: 0;
-  z-index: 100;
-  /* Behind the navbar */
-  padding: 48px 0 0;
-  /* Height of navbar */
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    bottom: 0;
+    /* rtl:remove */
+    left: 0;
+    z-index: 100;
+    /* Behind the navbar */
+    padding: 48px 0 0;
+    /* Height of navbar */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 }
 
 @media (max-width: 767.98px) {
-  .sidebar {
-    top: 5rem;
-  }
+    .sidebar {
+        top: 5rem;
+    }
 }
 
 
 .sidebar-sticky {
-  position: relative;
-  top: 0;
-  height: calc(100vh - 48px);
-  padding-top: .5rem;
-  overflow-x: hidden;
-  overflow-y: auto;
-  /* Scrollable contents if viewport is shorter than content. */
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
 }
 
 .logout:hover {
-  color: #fff;
+    color: #fff;
 }
 
 .sidebar .nav-link {
-  font-weight: 500;
-  color: #333;
+    font-weight: 500;
+    color: #333;
 }
 
 .sidebar .nav-link .feather {
-  margin-right: 4px;
-  color: #727272;
+    margin-right: 4px;
+    color: #727272;
 }
 
 .sidebar .nav-link.active {
-  color: #198754;
-  background-color: #bcddcd;
-  border-top-right-radius: 80px;
-  border-bottom-right-radius: 80px;
+    color: #198754;
+    background-color: #bcddcd;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
 }
 
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
-  color: inherit;
+    color: inherit;
 }
 
 .sidebar-heading {
-  font-size: .75rem;
-  text-transform: uppercase;
+    font-size: .75rem;
+    text-transform: uppercase;
 }
 
 /*
@@ -81,90 +81,93 @@ body {
  */
 
 .navbar-brand {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  font-size: 1rem;
-  background-color: rgba(0, 0, 0, .25);
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
 }
 
 .navbar .navbar-toggler {
-  top: .25rem;
-  right: 1rem;
+    top: .25rem;
+    right: 1rem;
 }
 
 .navbar .form-control {
-  padding: .75rem 1rem;
-  border-width: 0;
-  border-radius: 0;
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
 }
 
 .form-control-dark {
-  color: #fff;
-  background-color: rgba(255, 255, 255, .1);
-  border-color: rgba(255, 255, 255, .1);
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
 }
 
 .form-control-dark:focus {
-  border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
 
 .mini-jumbotron {
-  background-color: #cce4d8;
-  height: 215px;
-  border-radius: 10px;
+    background-color: #cce4d8;
+    height: 215px;
+    border-radius: 10px;
 }
 
 .table th {
-  background-color: #8cbba5;
-  color: #ffffff;
+    background-color: #8cbba5;
+    color: #ffffff;
 }
 
 th a {
-  text-decoration: none;
-  color: #fff;
+    text-decoration: none;
+    color: #fff;
 }
 
 .see-more {
-  text-decoration: none;
-  color: #198754;
+    text-decoration: none;
+    color: #198754;
 }
 
 .see-more:hover {
-  color: #959695;
+    color: #959695;
 }
 
 .table tr:nth-child(even) {
-  background-color: #ddf1e7;
+    background-color: #ddf1e7;
 }
 
 .table tr:nth-child(odd) {
-  background-color: #e8f3ee9f;
+    background-color: #e8f3ee9f;
 }
 
 .table-bg {
-  background-color: #cce4d8;
-  border-radius: 8px;
+    background-color: #cce4d8;
+    border-radius: 8px;
 }
 
 img {
-  width: 300px;
-  height: 300px;
+    width: 300px;
+    height: 300px;
 }
 
+.detail {
+    background-color: #f8f9fa;
+}
 
 
 #map {
-  height: 400px;
-  /* The height is 400 pixels */
-  width: 100%;
-  /* The width is the width of the web page */
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
 }
 
 @media screen and (max-width: 768px) {
-  .ilustration {
-    display: none;
-  }
+    .ilustration {
+        display: none;
+    }
 
 }

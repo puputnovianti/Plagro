@@ -40,8 +40,7 @@ class RegisterController extends Controller
         $retailer->phone = $data['phone'];
         $retailer->address = $data['address'];
         $retailer->location = $data['location'];
-        $retailer->latitude = $data['latitude'];
-        $retailer->longitude = $data['longitude'];
+        $retailer->link = $data['link'];
         $retailer->save();
 
 
@@ -154,21 +153,7 @@ class RegisterController extends Controller
         $calculation->total_score = $total;
         $calculation->save();
 
-        //store images place
-        if ($request->hasfile('place')) {
-            $images = $request->file('place');
-            foreach ($images as $image) {
-                $name = $retailer->id . '-image-' . time() . rand(1, 1000) . '.' . $image->extension();
-                $image->storeAs('ProfileImages', $name);
-                $dataImg = array(
-                    'retailer_id' => $retailer->id,
-                    'image_name' => $name,
-                    'criteria_name' => 'Tempat'
 
-                );
-                ProfileImage::create($dataImg);
-            }
-        }
         //store images facilities
         if ($request->hasfile('facilities')) {
             $images = $request->file('facilities');
@@ -188,6 +173,6 @@ class RegisterController extends Controller
 
 
         Mail::to($retailer->email)->send(new NotifikasiPendaftaran());
-        return redirect('/register')->with('success', 'Pendaftaran berhasil dilakukan. Silahkan cek email anda.');
+        return redirect('/register')->with('success', 'Pendaftaran berhasil dilakukan. Silahkan cek email Anda.');
     }
 }

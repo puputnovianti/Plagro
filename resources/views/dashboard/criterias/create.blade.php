@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Tambah Kriteria</h1>
     </div>
-    <div class="col-lg-8 shadow p-3">
+    <div class="col-lg-8 shadow p-3 detail">
         <form method="POST" action="/dashboard/criterias">
             @csrf
             <div class="mb-3">
@@ -21,6 +21,7 @@
                 @endforeach
             </select>
             <button type="submit" class="btn btn-success rounded-pill mt-3">Tambah</button>
+            <a class="btn btn-outline-success rounded-pill mt-3" href="/dashboard/criterias">Batal</a>
         </form>
     </div>
 </main>

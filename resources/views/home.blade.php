@@ -72,7 +72,7 @@
                 </div>
                 <div class="col-md-6">
                     <h1 class="display-5 fw-bold">Penuhi Kebutuhan Anda Bersama Kami</h1>
-                    <p>Plagro.id merupakan sebuah brand yang menawarkan produk pertanian organik segar. </p>
+                    <p>Plagro.id merupakan sebuah brand yang berada dibawah naungan Kelompok Tani Green Fresh Plaga yang terletak di Jl. Tiyingan, Desa Pelaga, Kecamatan Petang, Kabupaten Badung. Plagro.id menghadirkan pelayanan terbaik terhadap semua pelanggan dengan menyediakan produk-produk yang berkualitas dan tentunya segar. Kami juga menyediakan website yang memberikan kemudahan bagi pelanggan dalam membeli hasil tani kami. Tentunya kami sangan memperhatikan pengemasan produk kami agar ketika dikirim dan sampai ke rumah Anda kualitas produk tetap terjaga dan tetap segar.</p>
                     <p>Kami membuka kesempatan untuk menjadi mitra outlet Plagro.id untuk menjual produk berkualitas kami.</p>
                     <a class="link-shop" style="color: white;" aria-current="page" href="https://plagro.id/" style="border-radius: 25px;">plagro.id</a>
                 </div>
@@ -85,9 +85,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <h2>Apa saja syarat mendaftar sebagai mitra?</h2>
-                    <h4 class="text-muted mt-2">Usaha Kecil (perorangan)</h4>
                     <ul>
-                        <li>Menyediakan tempat dalam ruangan (indoor) atau luar ruangan (outdoor) minimal 3x3 meter</li>
+                        <li>Menyediakan tempat dalam ruangan (indoor) atau luar ruangan (outdoor) minimal 2x2 meter</li>
                         <li>Lokasi tempat yang strategis</li>
                         <li>Tempat telah memiliki izin yang sah</li>
                         <li>Melengkapi <a href="register">form pendaftaran</a></li>

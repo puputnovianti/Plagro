@@ -20,8 +20,7 @@ class CreateRetailersTable extends Migration
             $table->string('phone');
             $table->string('address');
             $table->string('location');
-            $table->string('latitude');
-            $table->string('longitude');
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }

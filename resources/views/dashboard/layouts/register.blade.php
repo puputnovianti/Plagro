@@ -83,7 +83,7 @@
         </div>
     </div>
     </div>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtLh1aP1Oh6epIP3_2ycC0Ku_AVQauzjs&libraries=places&callback=initMap">
+    <!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH2WnBsF3KcWir9cv5DjJWggOIdkscd8U&libraries=places&callback=initMap">
     </script>
 
     <script>
@@ -126,7 +126,7 @@
                 document.querySelector('.retailerForm input[name = "longitude"]').value = place.geometry.location.lng();
 
             });
-        }
+        } -->
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
