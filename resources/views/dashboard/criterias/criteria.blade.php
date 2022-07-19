@@ -10,7 +10,7 @@
         @isset($profiles)
 
 
-        <div class="col-md-5 shadow p-3" style="height: fit-content;">
+        <div class="col-md-5 shadow p-3 detail" style="height: fit-content;">
             <legend>Tambah Data Profil</legend>
             <form action="/dashboard/criterias/criteria" method="post">
                 @csrf
@@ -32,7 +32,7 @@
 
 
 
-        <div class="shadow p-2 col-md-6">
+        <div class="shadow p-2 col-md-6 detail">
             <table class="table table-borderless">
                 <thead>
                     <tr>

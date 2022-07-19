@@ -40,12 +40,12 @@
                 <td>{{ $retailer->location }}</td>
             </tr>
             <tr>
-                <th scope="col">Rata-rata Core Factor</th>
+                <th scope="col">Total Core Factor</th>
                 <td> : </td>
                 <td>{{ $retailer->calculation->cfactor }}</td>
             </tr>
             <tr>
-                <th scope="col">Rata-rata Secondary Factor</th>
+                <th scope="col">Total Secondary Factor</th>
                 <td> : </td>
                 <td>{{ $retailer->calculation->sfactor }}</td>
             </tr>
