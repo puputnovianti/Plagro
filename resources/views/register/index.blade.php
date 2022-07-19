@@ -16,35 +16,38 @@
         @csrf
         <div class="my-2">
             <label for="email" class="form-label">Email</label>
-            <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" required value="{{ old('email') }}">
+            <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
             @error('email')
             <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
         <div class="my-2">
             <label for="name" class="form-label">Nama</label>
-            <input name="name" type="text" class="form-control @error('name') is-invalid @enderror" required value="{{ old('name') }}">
+            <input name="name" type="text" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}">
             @error('name')
             <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
         <div class="my-2">
             <label for="phone" class="form-label">Nomor HP</label>
-            <input name="phone" id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" required value="{{ old('phone') }}">
+            <input name="phone" id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}">
             @error('phone')
             <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
         <div class="my-2">
             <label for="address" class="form-label">Alamat Domisili</label>
-            <input name="address" type="text" class="form-control @error('address') is-invalid @enderror" required value="{{ old('address') }}">
+            <input name="address" type="text" class="form-control @error('address') is-invalid @enderror" value="{{ old('address') }}">
             @error('address')
             <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
         <div class="my-2">
             <label for="location" class="form-label">Lokasi Ritel</label>
-            <input name="location" type="text" class="form-control @error('location') is-invalid @enderror" required value="{{ old('location') }}">
+            <input name="location" type="text" class="form-control @error('location') is-invalid @enderror" value="{{ old('location') }}">
+            @error('address')
+            <p class="text-danger">{{ $message }}</p>
+            @enderror
         </div>
         <div class="my-2">
             <label for="location" class="form-label">Link Maps</label>
