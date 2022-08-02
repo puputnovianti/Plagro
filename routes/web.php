@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CalculationController;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CriteriaController;
 use App\Http\Controllers\FactorController;
 use App\Http\Controllers\ProfileController;

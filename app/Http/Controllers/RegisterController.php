@@ -164,7 +164,7 @@ class RegisterController extends Controller
                 $dataImg = array(
                     'retailer_id' => $retailer->id,
                     'image_name' => $name,
-                    'criteria_name' => 'Fasilitas'
+                    'classification' => 'Fasilitas'
 
                 );
                 ProfileImage::create($dataImg);

@@ -97,10 +97,9 @@
     </div>
     <div class="shadow p-3 my-3 detail">
         <h4 class="h4">Gambar Lokasi</h4>
-        @if($tempat_images->count())
-        <h5 class="text-muted">Tempat</h5>
+        @if($images->count())
         <div class="row justify-content-start m-4">
-            @foreach($fasilitas_images as $image)
+            @foreach($images as $image)
             <div class="col-sm-4">
                 <img class="img-thumbnail" src="{{ asset('storage/ProfileImages/' . $image->image_name) }}" alt="profile image">
             </div>

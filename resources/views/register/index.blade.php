@@ -45,7 +45,7 @@
         <div class="my-2">
             <label for="location" class="form-label">Lokasi Ritel</label>
             <input name="location" type="text" class="form-control @error('location') is-invalid @enderror" value="{{ old('location') }}">
-            @error('address')
+            @error('location')
             <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>

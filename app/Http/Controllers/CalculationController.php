@@ -39,8 +39,7 @@ class CalculationController extends Controller
                 'retailer' => $retailer,
                 'details' => $retailer->retailerDetails,
                 'calculations' => $retailer->calculation,
-                'tempat_images' => ProfileImage::where('retailer_id', $retailer->id)->where("classification", "Tempat")->get(),
-                'fasilitas_images' => ProfileImage::where('retailer_id', $retailer->id)->where("classification", "Fasilitas")->get()
+                'images' => ProfileImage::where('retailer_id', $retailer->id)->where("classification", "Fasilitas")->get()
 
             ]
         );
